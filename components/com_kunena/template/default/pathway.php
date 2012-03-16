@@ -54,6 +54,7 @@ $id = JRequest::getInt ( 'id', 0 );
 	$jr_forum_count = count ( $jr_path_menu );
 
 	$fireinfo = '';
+	$fireonline = '';
 	$firepath = '<div class="path-element-first">' . CKunenaLink::GetCategoryListLink ( $this->escape( $this->config->board_title ) ) . '</div>';
 	$firelast = '';
 
