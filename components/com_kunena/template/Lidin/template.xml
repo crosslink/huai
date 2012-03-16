@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install>
+<kinstall type="kunena-template" version="1.6">
+	<name>Lidi</name>
+	<version>1.6.X</version>
+	<creationDate>2011-01-07</creationDate>
+	<author>gonzaunit</author>
+	<authorEmail>gonza_kpo_14@hotmail.com</authorEmail>
+	<authorUrl>http://pizcar.in</authorUrl>
+	<copyright>Pizcar</copyright>
+	<license>GNU/GPL</license>
+	<description>Template Lidin for Kunena</description>
+	<thumbnail>template_thumbnail.png</thumbnail>
+	<params>
+		<param name="avatarPosition" type="list" default="top" label="COM_KUNENA_TEMPLATE_PROFILE_POSITION" description="COM_KUNENA_TEMPLATE_PROFILEPOSITION_DESC">
+			<option value="left">COM_KUNENA_TEMPLATE_LEFT</option>
+			<option value="top">COM_KUNENA_TEMPLATE_TOP</option>
+			<option value="right">COM_KUNENA_TEMPLATE_RIGHT</option>
+			<option value="bottom">COM_KUNENA_TEMPLATE_BOTTOM</option>
+		</param>
+		<param name="buttonIconset" type="list" default="default" label="COM_KUNENA_TEMPLATE_BUTTON_SET" description="COM_KUNENA_TEMPLATE_BUTTON_SET_DESC">
+			<option value="default">COM_KUNENA_TEMPLATE_DEFAULT</option>
+			<option value="bluebird">COM_KUNENA_TEMPLATE_BUTTON_SET_BLUEBIRD</option>
+			<option value="graybird">COM_KUNENA_TEMPLATE_BUTTON_SET_GRAYBIRD</option>
+			<option value="blackbird">COM_KUNENA_TEMPLATE_BUTTON_SET_BLACKBIRD</option>
+			<option value="whitebird">COM_KUNENA_TEMPLATE_BUTTON_SET_WHITEBIRD</option>
+		</param>
+		<param name="profileIconset" type="list" default="default" label="COM_KUNENA_TEMPLATE_PROFILE_ICON_SET" description="COM_KUNENA_TEMPLATE_PROFILE_ICON_SET_DESC">
+			<option value="default">COM_KUNENA_TEMPLATE_DEFAULT</option>
+		</param>
+		<param name="editorIconset" type="list" default="default" label="COM_KUNENA_TEMPLATE_EDITOR_ICON_SET" description="COM_KUNENA_TEMPLATE_EDITOR_ICON_SET_DESC">
+			<option value="default">COM_KUNENA_TEMPLATE_DEFAULT</option>
+		</param>
+
+
+		<param name="templatebyText" type="hidden" default="Wallpapers" />
+		<param name="templatebyName" type="hidden" default="" />
+		<param name="templatebyLink" type="hidden" default="http://www.wallpapershdi.com" />
+		
+		<!-- Required avatar sizes -->
+		<param name="avatarSizeXThumb" type="hidden" default="36" />
+		<param name="avatarSizeYThumb" type="hidden" default="36" />
+		<param name="avatarSizeXWelcome" type="hidden" default="72" />
+		<param name="avatarSizeYWelcome" type="hidden" default="72" />
+		<param name="avatarSizeXList" type="hidden" default="36" />
+		<param name="avatarSizeYList" type="hidden" default="36" />
+		<param name="avatarSizeXPost" type="hidden" default="144" />
+		<param name="avatarSizeYPost" type="hidden" default="144" />
+		<param name="avatarSizeXProfile" type="hidden" default="200" />
+		<param name="avatarSizeYProfile" type="hidden" default="200" />
+	</params>
+</kinstall>

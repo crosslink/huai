@@ -1,0 +1,30 @@
+/**
+ * @version		$Id$
+ * @package		K2
+ * @author		JoomJunk
+ * @copyright	Copyright (c) 2011 - JoomJunk
+ * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ */
+ 
+.kunenaclr {clear:both;height:0;line-height:0;display:block;float:none;}
+
+div#kunenaQuickIconsTitle {margin:16px 0 0 0;padding:0;/*background:url(../images/bg.jpg) repeat-x 0 50%;height:8px;*/position:relative;z-index:9;}
+div#kunenaQuickIconsTitle a {
+display:block;clear:both;float:none;
+background:#F4F4F4 url(../images/kunena_logo.png) no-repeat scroll 50% 50%; 
+width:auto;
+height:31px;
+padding:2px 6px;
+}
+div#kunenaQuickIconsTitle a span {display:none; }
+
+#kunenaQuickIcons {clear:both;margin:-1px 0 8px 0;padding:8px 0 8px 0;position:relative;z-index:8;}
+#kunenaQuickIcons.kunenaNoLogo {margin:0 0 8px 0;padding:0;border:none;}
+#kunenaQuickIcons div.icon { text-align:center; margin-right:5px; float:left; margin-bottom:5px; }
+#kunenaQuickIcons div.icon a { display:block; float:left; border:1px solid #f0f0f0; height:97px; width:108px; color:#666; vertical-align:middle; text-decoration:none; }
+#kunenaQuickIcons div.icon a:hover { border-left:1px solid #f0f0f0; border-right:1px solid #C6C6C6; border-top:1px solid #f0f0f0; border-bottom:1px solid #C6C6C6;}
+#kunenaQuickIcons img { padding:10px 0; margin:0 auto; }
+#kunenaQuickIcons span { display:block; text-align:center; }
+
+	
+}

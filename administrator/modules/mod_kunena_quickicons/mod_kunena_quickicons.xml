@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="administrator" method="upgrade" version="2.5" position="icon">
+  <name>JJ Kunena Quickicons</name>
+  <author>Charlie Lodder</author>
+  <creationDate>Dec 24th, 2011</creationDate>
+  <copyright>JoomJunk</copyright>
+  <authorEmail>lodder15@hotmail.co.uk</authorEmail>
+  <version>1.0.1</version>
+  <license>GNU/GPLv3</license>
+	<description>JJKUNENAQUICKICONSDESC</description>
+	<files>
+		<filename module="mod_kunena_quickicons">mod_kunena_quickicons.php</filename>
+		<filename>index.html</filename>
+		<filename>default_quickicons.php</filename>
+		<folder>tmpl</folder>
+		<folder>icons</folder>
+	</files>
+	
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_kunena_quickicons.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_kunena_quickicons.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="basic">
+		</fields>
+	</config>
+</extension>
