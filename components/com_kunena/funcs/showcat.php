@@ -75,6 +75,7 @@ class CKunenaShowcat {
 			$subcatidsstr = (implode ( ",", $subcatids )).",{$catid}";
 		else
 			$subcatidsstr = "{$catid}";
+		
 		/*******************  END *************************/
 
 		//check if this forum is locked
