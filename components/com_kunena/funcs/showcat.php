@@ -70,7 +70,11 @@ class CKunenaShowcat {
 		$this->db->setQuery($query_for_subcategories);
 		$subcatids = $this->db->loadResultArray ();
 		KunenaError::checkDatabaseError();
-		$subcatidsstr = (implode ( ",", $subcatids )).",{$catid}";	
+		
+		if (sizeof($subcatids) > 0)
+			$subcatidsstr = (implode ( ",", $subcatids )).",{$catid}";
+		else
+			$subcatidsstr = "{$catid}";
 		/*******************  END *************************/
 
 		//check if this forum is locked
