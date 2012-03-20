@@ -24,15 +24,15 @@ if (is_array ( $this->klistpost ) && !$this->kunena_config->board_offline) { ?>
 	<ul class="klatest-itemdetails">
 		<?php
 		if ( $this->params->get ( 'sh_topiciconoravatar' ) == 1) { ?>
-		<li class="klatest-avatar">
+		<span class="klatest-avatar">
 			<?php echo modKunenaLatestHelper::userAvatar( $item->userid, $this->params ); ?>
-		</li>
+		</span>
 		<?php } elseif( $this->params->get ( 'sh_topiciconoravatar' ) == 0) {  ?>
 		<li class="klatest-topicicon">
 		<?php echo $this->ktemplate->getTopicIcon($item); ?>
 		</li>
 		<?php } ?>
-		<li class="klatest-subject">
+		<span class="klatest-subject">
 		<?php
 			if ($this->params->get ( 'sh_sticky' )) {
 				if ($item->ordering) {
@@ -70,7 +70,7 @@ if (is_array ( $this->klistpost ) && !$this->kunena_config->board_offline) { ?>
 				}
 			}
 			?>
-		</li>
+		</span>
 		<?php if ($this->params->get ( 'sh_firstcontentcharacter' )) : ?>
 			<li class="klatest-preview-content"><?php echo JString::substr(KunenaParser::stripBBCode($item->message), '0', $this->params->get ( 'lengthcontentcharacters' )); ?></li>
 		<?php endif; ?>

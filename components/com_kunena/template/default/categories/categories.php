@@ -1,13 +1,5 @@
 <?php
-/**
- * @version $Id$
- * Kunena Component
- * @package Kunena
- *
- * @Copyright (C) 2008 - 2011 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- **/
+
 // Dont allow direct linking
 defined ( '_JEXEC' ) or die ();
 
@@ -71,12 +63,13 @@ foreach ( $this->categories [0] as $section ) :
 	</span>
 
 
+<span class="kchildcount ks">
 
-&nbsp;
 
 		<?php if (!empty($category->description)) : ?>
 			<?php echo KunenaParser::parseBBCode ($category->description) ?> 
-		<?php endif; ?>
+		<?php endif; ?></span>
+
 		<?php
 			// Display subcategories
 			if (! empty ( $this->childforums [$category->id] )) :
@@ -135,13 +128,13 @@ foreach ( $this->categories [0] as $section ) :
 
 			<div class="klatest-subject-by ks">
 			<?php
-					echo JText::_('COM_KUNENA_BY') . ' ';
+					
 					if (!empty($category->userid)) {
 						echo CKunenaLink::GetProfileLink ( intval($category->userid), $this->escape($this->config->username ? $category->username:$category->uname) );
 					} else {
 						echo CKunenaLink::GetProfileLink ( intval($category->userid), $this->escape($category->mname) );
 					}
-					echo ' |&nbsp;<span class="nowrap" title="' . CKunenaTimeformat::showDate ( $category->time_last_msg, 'config_post_dateformat_hover' ) . '">' . CKunenaTimeformat::showDate ( $category->time_last_msg, 'config_post_dateformat' ) . '</span>';
+					echo ' |&nbsp;<span class="kchildcount ks" title="' . CKunenaTimeformat::showDate ( $category->time_last_msg, 'config_post_dateformat_hover' ) . '">' . CKunenaTimeformat::showDate ( $category->time_last_msg, 'config_post_dateformat' ) . '</span>';
 					?>
 			</div>
 			</td>

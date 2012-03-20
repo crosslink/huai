@@ -49,10 +49,7 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 <?php if ((CKunenaTools::isModerator ( $this->my->id, $this->catid ) || !$this->topicLocked)&&$this->my->id) :?>
 
 <div class="kblock">
-	<div class="kheader">
-		<h2><span><?php echo JText::_('COM_KUNENA_BUTTON_QUICKREPLY') ?></span></h2>
-	</div>
-
+	
 <div id="kreply<?php echo intval($this->id) ?>_form" class="kreply-form">
 	<form action="<?php echo CKunenaLink::GetPostURL(); ?>" method="post" name="postform" enctype="multipart/form-data">
 		<input type="hidden" name="parentid" value="<?php echo intval($this->id) ?>" />

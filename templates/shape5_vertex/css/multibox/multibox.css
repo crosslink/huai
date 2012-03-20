@@ -84,7 +84,7 @@
 	position: relative;
 	margin: 7px 0 0 35px;
 	float: left;
-	font-family: Helvetica, arial, sans-serif, Verdana;
+	font-family: font-family:Tahoma,Microsoft Yahei,Simsun;
 	font-size: 12px;
 	color: #000000;
 	font-weight: bold;
@@ -96,7 +96,7 @@
 	width: 50px;
 	margin: 10px 35px 0 0;
 	float: right;
-	font-family: Helvetica, arial, sans-serif, Verdana;
+	font-family:Tahoma,Microsoft Yahei,Simsun;
 	font-size: 11px;
 	color: #000000;
 	text-align: right;
@@ -107,7 +107,7 @@
 	position: relative;
 	margin: 0 35px 0 35px;
 	padding-top: 5px;
-	font-family: Helvetica, arial, sans-serif, Verdana;
+	font-family:Tahoma,Microsoft Yahei,Simsun;
 	font-size: 11px;
 	color: #000000;
 	text-align: left;
