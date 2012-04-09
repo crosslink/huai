@@ -168,7 +168,7 @@ PX		EM			PCT			PT
 #Kunena .kblock div.kheader {
 	border-bottom:2px solid;
 	padding:0 10px 0 10px;
-	background: #3B3B3B url(images/cat_title_bg.gif) repeat-x top left;	height: 30px;
+	background:  url(images/cat_title_bg.gif) repeat-x top left;	height: 30px;
 }
 #Kunena .kheader h2,
 #Kunena .kheader h2 a {

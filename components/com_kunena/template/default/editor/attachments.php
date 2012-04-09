@@ -1,13 +1,6 @@
 <?php
 /**
- * @version $Id$
- * Kunena Component
- * @package Kunena
- *
- * @Copyright (C) 2011 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- *
+ *发帖窗口的附件插件
  **/
 
 // Dont allow direct linking
@@ -19,7 +12,9 @@ defined ( '_JEXEC' ) or die ();
 		<?php foreach($this->attachments as $attachment) : ?>
 			<li class="kattachment-old">
 				<span>
-					<input type="checkbox" name="attach-id[]" checked="checked" value="<?php echo intval($attachment->id); ?>" />
+					
+<input type="checkbox" name="attach-id[]" checked="checked" value="<?php echo intval($attachment->id); ?>" />
+
 					<a href="#" class="kattachment-insert" style="display: none;"><?php echo  JText::_('COM_KUNENA_EDITOR_INSERT'); ?></a>
 				</span>
 				<?php echo $attachment->thumblink; ?>

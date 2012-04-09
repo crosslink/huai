@@ -10,9 +10,9 @@ foreach ( $this->categories [0] as $section ) :
 	$htmlClassTitleCover = !empty ( $section->class_sfx ) ? ' ktitle-cover' . $this->escape($section->class_sfx) : '';
 ?>
 <div class="kblock kcategories-<?php echo intval($section->id) ?>">
-	<div class="kheader">
-		<span class="ktoggler"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="catid_<?php echo intval($section->id) ?>"></a></span>
-		<h2><span><?php echo CKunenaLink::GetCategoryLink ( 'listcat', intval($section->id), $this->escape($section->name), 'follow' ); ?></span></h2>
+	<div class="kmsg-header kmsg-header-left">
+		
+		<h2><span >&nbsp;&nbsp;<?php echo CKunenaLink::GetCategoryLink ( 'listcat', intval($section->id), $this->escape($section->name), 'follow' ); ?></span></h2>
 		
 
 
@@ -118,7 +118,7 @@ foreach ( $this->categories [0] as $section ) :
 				$profile = KunenaFactory::getUser((int)$category->userid);
 				$useravatar = $profile->getAvatarLink('klist-avatar', 'list');
 				if ($useravatar) : ?>
-					<span class="klatest-avatar"> <?php echo CKunenaLink::GetProfileLink ( intval($category->userid), $useravatar ); ?></span>
+					<span class="klatest-avatar1"> <?php echo CKunenaLink::GetProfileLink ( intval($category->userid), $useravatar ); ?></span>
 				<?php endif; ?>
 			<!-- /Avatar -->
 			<?php endif; ?>

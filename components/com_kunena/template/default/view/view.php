@@ -1,13 +1,5 @@
 <?php
-/**
- * @version $Id$
- * Kunena Component
- * @package Kunena
- *
- * @Copyright (C) 2008 - 2011 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- **/
+
 
 // Dont allow direct linking
 defined( '_JEXEC' ) or die();
@@ -42,11 +34,18 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 		</div>
 	</div>
 </div>
+
+
+
 <?php $this->displayThreadActions(1); ?>
 
 <div class = "kforum-pathway-bottom">
 	<?php echo $this->kunena_pathway1; ?>
 </div>
+
+
+
+
 <!-- B: List Actions Bottom -->
 <div class="kcontainer klist-bottom">
 	<div class="kbody">

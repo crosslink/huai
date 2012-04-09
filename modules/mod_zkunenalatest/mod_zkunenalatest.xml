@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.7.1"
+	client="site"
+	method="upgrade">
+	
+	<name>zKunenaLatest</name>
+	<author>Aaron Gilbert</author>
+	<creationDate>Sept 2011</creationDate>
+	<copyright>Copyright (C) 2010 - 2011 Aaron Gilbert. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authoremail>info@braineater.ca</authoremail>
+	<authorUrl>http://www.nzambi.braineater.ca</authorUrl>
+	<version>1.8.1</version>
+	<description>MOD_ZKUNENALATEST_DESC</description>
+	
+	<files folder="site">
+		<folder>admin</folder>
+		<folder>assets</folder>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename module="mod_zkunenalatest">mod_zkunenalatest.php</filename>
+	</files>
+	
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.mod_zkunenalatest.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_zkunenalatest.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_zkunenalatest/admin/elements">
+			
+			<fieldset name="BASIC_LAYOUT" addfieldpath="/modules/mod_zkunenalatest/admin/fields" >
+				<field type="assets" name ="assets" path="modules/mod_zkunenalatest/admin/" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				
+				<field name="addHeader" type="list" class="z-switch" default="0" label="MOD_ZKUNENALATEST_SHOW_HEADER" description="MOD_ZKUNENALATEST_SHOW_HEADER_DESC">
+					<option value="0">NO</option>
+					<option value="1">YES</option>
+				</field>
+				<field name="headerText" type="text" default="" size="50" label="MOD_ZKUNENALATEST_HEADER_TEXT" description="MOD_ZKUNENALATEST_HEADER_TEXT_DESC" />
+				<field name="numberPosts" type="text" size="3" default="6" label="MOD_ZKUNENALATEST_POST_LIMIT" description="MOD_ZKUNENALATEST_POST_LIMIT_DESC" />
+				<field name="showAvatar" type="list" default="1" label="MOD_ZKUNENALATEST_SHOW_AVATAR" description="MOD_ZKUNENALATEST_SHOW_AVATAR_DESC">
+					<option value="0">MOD_ZKUNENALATEST_NONE</option>
+					<option value="1">MOD_ZKUNENALATEST_AVATAR</option>
+					<option value="2">MOD_ZKUNENALATEST_TOPIC_ICON</option>
+				</field>
+				<field name="avatarsize" type="pixels" size="3" default="40" label="MOD_ZKUNENALATEST_AVATAR_SIZE" description="MOD_ZKUNENALATEST_AVATAR_SIZE_DESC" />
+				<field name="showAuthor" type="list" class="z-switch"  default="1" label="MOD_ZKUNENALATEST_SHOW_AUTHOR" description="MOD_ZKUNENALATEST_SHOW_AUTHOR_DESC">
+					<option value="0">MOD_ZKUNENALATEST_NO</option>
+					<option value="1">MOD_ZKUNENALATEST_YES</option>
+				</field>
+				<field name="authorPrefix" type="text" size="20" default="By-" label="MOD_ZKUNENALATEST_AUTHOR_PREFIX" description="MOD_ZKUNENALATEST_AUTHOR_PREFIX_DESC" />
+				<field name="showNew" type="list" class="z-switch"  default="1" label="MOD_ZKUNENALATEST_SHOW_UNREAD" description="MOD_ZKUNENALATEST_SHOW_UNREAD_DESC">
+					<option value="0">MOD_ZKUNENALATEST_NO</option>
+					<option value="1">MOD_ZKUNENALATEST_YES</option>
+				</field>
+				<field name="showTime" type="list" class="z-switch"  default="1" label="MOD_ZKUNENALATEST_SHOW_TIME" description="MOD_ZKUNENALATEST_SHOW_TIME_DESC">
+					<option value="0">MOD_ZKUNENALATEST_NO</option>
+					<option value="1">MOD_ZKUNENALATEST_YES</option>
+				</field>
+				<field name="timeFormat" type="list" default="datetime_today" label="MOD_ZKUNENALATEST_TIME_FORMAT" description="MOD_ZKUNENALATEST_TIME_FORMAT_DESC">
+					<option value="datetime_today">MOD_ZKUNENALATEST_DATETIME_TODAY</option>
+					<option value="datetime">MOD_ZKUNENALATEST_DATETIME</option>
+					<option value="date_today">MOD_ZKUNENALATEST_DATE_TODAY</option>
+					<option value="date">MOD_ZKUNENALATEST_DATE</option>
+					<option value="time">MOD_ZKUNENALATEST_TIME</option>
+					<option value="ago">MOD_ZKUNENALATEST_TIME_SINCE</option>
+				</field>
+			</fieldset>
+			<fieldset name="DATA_SOURCE" addfieldpath="/modules/mod_zkunenalatest/admin/fields" >
+				<field name="modelType" type="list" default="latesttopics" label="MOD_ZKUNENALATEST_MODEL_TYPE" description="MOD_ZKUNENALATEST_MODEL_TYPE_DESC">
+					<option value="latesttopics">MOD_ZKUNENALATEST_SHOW_LATEST_TOPICS</option>
+					<option value="latestmessages">MOD_ZKUNENALATEST_SHOW_LATEST_MESSAGES</option>
+					<option value="noreplies">MOD_ZKUNENALATEST_SHOW_NO_REPLIES</option>
+					<option value="subscriptions">MOD_ZKUNENALATEST_SHOW_SUBSCRIPTIONS</option>
+					<option value="favorites">MOD_ZKUNENALATEST_SHOW_FAVORITES</option>
+					<option value="owntopics">MOD_ZKUNENALATEST_SHOW_OWN_TOPICS</option>
+					<option value="deletedposts">MOD_ZKUNENALATEST_SHOW_DELETE_POSTS</option>
+					<option value="saidthankyouposts">MOD_ZKUNENALATEST_SHOW_SAID_THANKYOU_POSTS</option>
+					<option value="gotthankyouposts">MOD_ZKUNENALATEST_SHOW_GOT_THANKYOU_POSTS</option>
+					<option value="userposts">MOD_ZKUNENALATEST_SHOW_USER_POSTS</option>
+				</field>
+				<field name="categoryLimit" type="kunenacategories" default="0" label="MOD_ZKUNENALATEST_CATEGORY_LIMIT" description="MOD_ZKUNENALATEST_CATEGORY_LIMIT_DESC" multiple="true" none="MOD_ZKUNENALATEST_NONE" size="5" class="kunenacategories" />
+				<field name="categoryFilter" type="list" default="1" label="MOD_ZKUNENALATEST_FILTER_TYPE" description="MOD_ZKUNENALATEST_FILTER_TYPE_DESC" class="kunenacategoriesfilter" >
+					<option value="0">MOD_ZKUNENALATEST_HIDE_CATEGORIES</option>
+					<option value="1">MOD_ZKUNENALATEST_SHOW_CATEGORIES</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="SIZES_COLORS">
+				<field name="fluidWidth" type="list" class="z-switch fluidWidth experimental"  default="0" label="MOD_ZKUNENALATEST_FLUID_LAYOUT" description="MOD_ZKUNENALATEST_FLUID_LAYOUT_DESC">
+					<option value="0">MOD_ZKUNENALATEST_NO</option>
+					<option value="1">MOD_ZKUNENALATEST_YES</option>
+				</field>
+				<field name="minwidth" type="pixels" size="3" default="0" label="MOD_ZKUNENALATEST_MIN_WIDTH" description="MOD_ZKUNENALATEST_MIN_WIDTH_DESC" />
+				<field name="modulewidth" type="pixels" size="3" default="240" label="MOD_ZKUNENALATEST_MODULE_WIDTH" description="MOD_ZKUNENALATEST_MODULE_WIDTH_DESC" />
+				<field name="boxNormal" type="pixels" size="3" default="60"  label="MOD_ZKUNENALATEST_HEIGHT_NORMAL" description="MOD_ZKUNENALATEST_HEIGHT_NORMAL_DESC" />
+				<field name="boxSmall" type="pixels" size="3" default="40"  label="MOD_ZKUNENALATEST_HEIGHT_SMALL" description="MOD_ZKUNENALATEST_HEIGHT_NORMAL_DESC" />
+				<field name="boxLarge" type="pixels" size="3" default="160"  label="MOD_ZKUNENALATEST_HEIGHT_LARGE" description="MOD_ZKUNENALATEST_HEIGHT_NORMAL_DESC" />
+				<field name="botSlideClr" size="8" type="text" default="" class="color {required:false,hash:true,adjust:false,pickerPosition:'right',pickerClosable:true}" label="MOD_ZKUNENALATEST_BOTTOM_SLIDER_COLOR" description="MOD_ZKUNENALATEST_BOTTOM_SLIDER_COLOR_DESC" />
+				<field name="botSlideBkg" size="8" type="text" default="" class="color {required:false,hash:true,adjust:false,pickerPosition:'right',pickerClosable:true}" label="MOD_ZKUNENALATEST_BOTTOM_SLIDER_BACKGROUND" description="MOD_ZKUNENALATEST_BOTTOM_SLIDER_BACKGROUND_DESC" />
+				<field name="botNavBkg" size="8" type="text" default="" class="color {required:false,hash:true,adjust:false,pickerPosition:'right',pickerClosable:true}" label="MOD_ZKUNENALATEST_NAV_BAR_COLOR" description="MOD_ZKUNENALATEST_NAV_BAR_COLOR_DESC" />
+				<field name="contentBkg" size="8" type="text" default="" class="color {required:false,hash:true,adjust:false,pickerPosition:'right',pickerClosable:true}" label="MOD_ZKUNENALATEST_CONTENT_BACKGROUND" description="MOD_ZKUNENALATEST_CONTENT_BACKGROUND_DESC" />
+				<field name="borderClr" size="8" type="text" default="" class="color {required:false,hash:true,adjust:false,pickerPosition:'right',pickerClosable:true}" label="MOD_ZKUNENALATEST_BORDER_COLOR" description="MOD_ZKUNENALATEST_CONTENT_BACKGROUND_DESC" />
+				<field name="messageTrim" size="3" type="char" default="260" label="MOD_ZKUNENALATEST_TRIM_MESSAGE" description="MOD_ZKUNENALATEST_TRIM_MESSAGE_DESC" />
+				<field name="subjectLength" size="3" type="char" default="50" label="MOD_ZKUNENALATEST_MAX_SUBJECT" description="MOD_ZKUNENALATEST_MAX_SUBJECT_DESC" />
+			</fieldset>
+			<fieldset name="advanced" >
+				<field name="MooFX" type="list" class="z-switch MooFX"  default="1" label="MOD_ZKUNENALATEST_MOO_FX" description="MOD_ZKUNENALATEST_MOO_FX_DESC">
+					<option value="0">MOD_ZKUNENALATEST_NO</option>
+					<option value="1">MOD_ZKUNENALATEST_YES</option>
+				</field>
+				<field name="moo_trans1" type="list" default="Sine" class="mooOptions" label="MOD_ZKUNENALATEST_MOO_TRANS" description="MOD_ZKUNENALATEST_MOO_TRANS_DESC">
+					<option value="0">None</option>
+					<option value="Back">Back</option>
+					<option value="linear">linear</option>
+					<option value="Quad">Quad</option>
+					<option value="Cubic">Cubic</option>
+					<option value="Quart">Quart</option>
+					<option value="Quint">Quint</option>
+					<option value="Sine">Sine</option>
+					<option value="Expo">Expo</option>
+					<option value="Circ">Circ</option>
+					<option value="Bounce">Bounce</option>
+					<option value="Elastic">Elastic</option>
+				</field>
+				<field name="moo_trans2" type="list" default="easeOut" class="mooOptions" label="MOD_ZKUNENALATEST_MOO_TRANS" description="MOD_ZKUNENALATEST_MOO_TRANS_DESC">
+					<option value="0">None</option>
+					<option value="easeIn">easeIn </option>
+					<option value="easeOut">easeOut </option>
+					<option value="easeInOut">easeInOut </option>
+				</field>
+				
+				<field name="allowLink" type="list" class="z"  default="1" label="MOD_ZKUNENALATEST_ALLOW_LINK" description="MOD_ZKUNENALATEST_ALLOW_LINK_DESC">
+					<option value="0">MOD_ZKUNENALATEST_NO_LINK</option>
+					<option value="1">MOD_ZKUNENALATEST_YES_LINK</option>
+				</field>
+			</fieldset>
+			<fieldset name="INFORMATION" >
+				<field type="information" name="info" />
+			</fieldset>
+		</fields>
+	</config>
+	
+	<updateservers>
+		<server type="extension" priority="1" name="nZambi Update Site">http://www.nzambi.braineater.ca/updates/mod_zkunenalatest-update.xml</server>
+	</updateservers>
+	
+</extension>

@@ -10,9 +10,9 @@ defined ( '_JEXEC' ) or die ();
 <?php $this->displaySubCategories () ?>
 <?php if ($this->objCatInfo->headerdesc) : ?>
 <div class="kblock">
-	<div class="kheader">
+	<div class="kmsg-header kmsg-header-left">
 		<span class="ktoggler"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="frontstats_tbody"></a></span>
-		<h2><span><?php echo JText::_('COM_KUNENA_FORUM_HEADER'); ?></span></h2>
+		<h2><span>&nbsp;&nbsp;<?php echo JText::_('COM_KUNENA_FORUM_HEADER'); ?></span></h2>
 	</div>
 	<div class="kcontainer" id="frontstats_tbody">
 		<div class="kbody">

@@ -71,7 +71,7 @@ if (!isset($this->showUnusedSocial)) $this->showUnusedSocial = false;
 		<?php endif ?>
 
 		<li class="kpost-smallicons">
-			<?php echo $this->profile->profileIcon('gender'); ?>
+			
 			<?php echo $this->profile->profileIcon('birthdate'); ?>
 			<?php echo $this->profile->profileIcon('location'); ?>
 			<?php echo $this->profile->profileIcon('website'); ?>

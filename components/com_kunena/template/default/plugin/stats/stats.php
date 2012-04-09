@@ -93,7 +93,7 @@ $k = 0;
 						}
 					?>
 					<tr class = "k<?php echo $this->escape($tabclass[$k]); ?>">
-						<td class="kcol-first">
+						<td class="kcol-first1">
 							<?php echo CKunenaLink::GetThreadLink( 'view', intval($toptitle->catid), intval($toptitle->id), KunenaParser::parseText ($toptitle->subject), '' ); ?>
 						</td>
 						<td class="kcol-mid">

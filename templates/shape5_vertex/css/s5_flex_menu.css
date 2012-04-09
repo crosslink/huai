@@ -120,17 +120,17 @@ margin-top:2px;
 	position:relative;
 	float:left;
 	height:25px;
-	padding-right:10px;
-	padding-top:5px;
+	padding-right:7.01px;
+	padding-top:0.01px;
 	padding-bottom:0px;
-	padding-left:10px;
+	padding-left:7.01px;
 	overflow:hidden;
 	border-right:solid 1px #222222;
 }
 
 #s5_nav li a {
 	color:#FFFFFF;
-	font-size:1.15em;
+	font-size:1.05em;font-family: Tahoma,Microsoft Yahei;
 	}
 
 #s5_nav li.mainParentBtn .s5_level1_span2 a {
@@ -141,7 +141,7 @@ margin-top:2px;
 	display:block;
 	clear:both;
 	color:#CCCCCC;
-	font-size:0.7em;
+	font-size:0.8em;
 	cursor:pointer;
 }
 
@@ -155,7 +155,7 @@ display:block;
 background:none;
 height:25px;
 display:block;
-padding-top:6px;
+padding-top:3px;
 }
 
 #s5_nav li.active .s5_level1_span1, #s5_nav li.mainMenuParentBtnFocused .s5_level1_span1, #s5_nav li:hover .s5_level1_span1 {

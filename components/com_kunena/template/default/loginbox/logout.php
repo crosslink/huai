@@ -1,14 +1,5 @@
 <?php
-/**
- * @version $Id$
- * Kunena Component
- * @package Kunena
- *
- * @Copyright (C) 2008 - 2011 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- *
- **/
+
 
 // Dont allow direct linking
 defined ( '_JEXEC' ) or die ();
@@ -49,12 +40,11 @@ $PMlink = $private->getInboxLink($PMCount ? JText::sprintf('COM_KUNENA_PMS_INBOX
 					<?php endif; ?>
 				</ul>
 				<ul class="kprofilebox-welcome">
-					<li><?php echo JText::_('COM_KUNENA_PROFILEBOX_WELCOME'); ?>, <strong><?php echo CKunenaLink::GetProfileLink ( intval($this->user->id), $this->escape($this->kunena_username) ); ;?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
-					<strong><?php echo JText::_('COM_KUNENA_MYPROFILE_LASTVISITDATE'); ?>:</strong> <span title="<?php echo CKunenaTimeformat::showDate($this->user->lastvisitDate, 'ago', 'utc'); ?>"><?php echo CKunenaTimeformat::showDate($this->user->lastvisitDate, 'date_today', 'utc'); ?></span></li>
+					<li><?php echo JText::_('COM_KUNENA_PROFILEBOX_WELCOME'); ?>, <strong><?php echo CKunenaLink::GetProfileLink ( intval($this->user->id), $this->escape($this->kunena_username) ); ;?></strong>&nbsp;&nbsp;<?php echo JText::_('COM_KUNENA_MYPROFILE_LASTVISITDATE'); ?>: <span title="<?php echo CKunenaTimeformat::showDate($this->user->lastvisitDate, 'ago', 'utc'); ?>"><?php echo CKunenaTimeformat::showDate($this->user->lastvisitDate, 'date_today', 'utc'); ?></span></li>
 					<?php if ($logout) : ?>
 					<li>
 					<form action="<?php echo KunenaRoute::_(KUNENA_LIVEURLREL) ?>" method="post" name="login">
-						<input type="submit" name="submit" class="kbutton" value="<?php echo JText::_('COM_KUNENA_PROFILEBOX_LOGOUT'); ?>" />
+						<input type="submit" name="submit" value="<?php echo JText::_('COM_KUNENA_PROFILEBOX_LOGOUT'); ?>" />
 						<input type="hidden" name="option" value="<?php echo $logout['option']; ?>" />
 						<?php if (!empty($logout['view'])) : ?>
 						<input type="hidden" name="view" value="<?php echo $logout['view']; ?>" />

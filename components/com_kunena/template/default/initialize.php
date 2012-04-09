@@ -1,13 +1,5 @@
 <?php
-/**
-* @version $Id$
-* Kunena Component
-* @package Kunena
-*
-* @Copyright (C) 2011 Kunena Team. All rights reserved.
-* @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
-* @link http://www.kunena.org
-**/
+
 defined( '_JEXEC' ) or die();
 
 $kunena_config = KunenaFactory::getConfig ();
@@ -72,7 +64,7 @@ $styles = <<<EOF
 	/* Kunena Custom CSS */
 EOF;
 
-$forumHeader = $this->params->get('forumHeadercolor', $skinner ? '' : '#5388B4');
+$forumHeader = $this->params->get('forumHeadercolor', $skinner ? '' : '');
 
 if ($forumHeader) {
 	$styles .= <<<EOF
@@ -91,7 +83,7 @@ if ($forumHeader) {
 EOF;
 }
 
-$forumLink = $this->params->get('forumLinkcolor', $skinner ? '' : '#5388B4');
+$forumLink = $this->params->get('forumLinkcolor', $skinner ? '' : '#174F82');
 
 if ($forumLink) {
 	$styles .= <<<EOF

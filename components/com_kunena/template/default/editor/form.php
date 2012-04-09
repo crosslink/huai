@@ -1,23 +1,5 @@
 <?php
-/**
- * @version $Id$
- * Kunena Component
- * @package Kunena
- *
- * @Copyright (C) 2008 - 2011 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- *
- * Based on FireBoard Component
- * @Copyright (C) 2006 - 2007 Best Of Joomla All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.bestofjoomla.com
- *
- * Based on Joomlaboard Component
- * @copyright (C) 2000 - 2004 TSMF / Jan de Graaff / All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @author TSMF & Jan de Graaff
- **/
+
 defined( '_JEXEC' ) or die();
 
 global $topic_emoticons;
@@ -60,8 +42,8 @@ $this->k=0;
 	<?php echo JHTML::_( 'form.token' ); ?>
 
 <div class="kblock">
-	<div class="kheader">
-		<h2><span><?php echo $this->escape($this->title)?></span></h2>
+	<div class="kmsg-header kmsg-header-right">
+		<h2><span>&nbsp;&nbsp;<?php echo $this->escape($this->title)?></span></h2>
 	</div>
 	<div class="kcontainer">
 		<div class="kbody">
@@ -96,16 +78,7 @@ $this->k=0;
 			</td>
 		</tr>
 
-		<?php if ($this->config->askemail && !$this->my->id) : ?>
-		<tr class = "krow<?php echo 1+ $this->k^=1 ?>">
-			<td class = "kcol-first"><strong><?php echo JText::_('COM_KUNENA_GEN_EMAIL');?></strong></td>
-			<td class="kcol-mid">
-				<input type="text" id="email" name="email"  size="35" class="kinputbox postinput required validate-email" maxlength="35" value="<?php echo !empty($this->email) ? $this->escape($this->email) : '' ?>" />
-				<br />
-				<?php echo $this->config->showemail == '0' ? JText::_('COM_KUNENA_POST_EMAIL_NEVER') : JText::_('COM_KUNENA_POST_EMAIL_REGISTERED'); ?>
-			</td>
-		</tr>
-		<?php endif; ?>
+		
 
 		<tr id="kpost-subject" class="krow<?php echo 1 + $this->k^=1 ?>">
 			<td class="kcol-first">
@@ -224,6 +197,4 @@ if (!$this->authorName) {
 	echo '<script type="text/javascript">document.postform.message.focus();</script>';
 }
 ?>
-</form><?php if ($this->hasThreadHistory ()) : ?>
-<?php $this->displayThreadHistory (); ?>
-<?php endif; ?>
+</form>

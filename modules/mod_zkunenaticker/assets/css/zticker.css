@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+.zKunenaTicker {
+}
+.zKunenaTickerWrap {
+	display:block;
+	overflow:hidden;
+	position:relative;
+	margin-bottom: 5px;
+}
+.zTickerVertical {
+	display:block;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.zTickerVertical li {
+	display:block;
+	list-style-type: none;
+	text-align:left;
+	margin:0;
+	padding:1px;
+	float:left;
+	width: 100%;	
+}
+.zTickerVertical li .zKunenaTickerSubject, .zTickerVertical li .zKunenaTickerAuthor {
+	font-size:1em;
+		margin-bottom:1px;
+}
+.zTickerVertical li .zKunenaTickerSubject a:link, .zTickerVertical li .zKunenaTickerSubject a:Visited, .zTickerVertical li .zKunenaTickerAuthor a:link, .zTickerVertical li .zKunenaTickerAuthor a:Visited {
+	font-size:.9em;
+	margin-bottom:1px;
+	text-decoration:none;
+}
+.zTickerVertical li .zKunenaTickerSubject a:hover, .zTickerVertical li .zKunenaTickerAuthor a:hover {
+	text-decoration:underline;
+}
+.zTickerVertical li .zKunenaTickerTime {
+	font-size:1em;
+	margin-bottom:1px;
+}
+
+.zTickerVertical li .zKunenaTickerAvatar {
+}
+.zTickerVertical li .zKunenaTickerDetails {
+}
+.zTickerVertical li .zKunenaTickerBottom {
+	display:block;
+	font-size: .9em;
+	margin:0px 0 0px 0;
+}
+.zTickerVertical li img {
+	float: left;
+	padding: 2px;
+}
+#zKunenaTickerHeader {
+	width: 240px;
+}
+.zTickerVertical .tickeritem1 {
+}
+.zKunenaTicker span {
+	padding: 3px;
+}

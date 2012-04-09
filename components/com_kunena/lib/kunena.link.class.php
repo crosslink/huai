@@ -121,8 +121,7 @@ class CKunenaLink {
 	}
 
 	function GetThreadLink($func, $catid, $threadid, $threadname, $title, $rel = 'follow', $class = '') {
-		//return CKunenaLink::GetSefHrefLink ( KUNENA_LIVEURLREL . '&func=' . $func . '&catid=' . $catid . '&id=' . $threadid, $threadname, $title, $rel, $class );
-		return CKunenaLink::GetSefHrefLink ( KUNENA_LIVEURLREL . '&func=' . $func . '&catid=' . $catid . '&id=' . $threadid, $threadname, $title, $rel, $class, '', ' target="_blank"');
+		return CKunenaLink::GetSefHrefLink ( KUNENA_LIVEURLREL . '&func=' . $func . '&catid=' . $catid . '&id=' . $threadid, $threadname, $title, $rel, $class );
 	}
 
 	function GetThreadLayoutLink($layout, $catid, $threadid, $mesid, $threadname, $limitstart=0, $limit=0, $title='', $rel = 'nofollow', $class = '') {

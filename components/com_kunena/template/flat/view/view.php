@@ -34,7 +34,10 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 <div class="kblock">
 
 
-
+        <div class="kmsg-header kmsg-header-left">
+		<h2><span>&nbsp;&nbsp;<?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->kunena_topic_title) ?></span></h2>
+		<?php if ($this->favorited) : ?><div class="kfavorite"></div><?php endif ?>
+	</div>
 
 
 	<div class="kcontainer">

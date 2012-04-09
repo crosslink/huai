@@ -348,9 +348,9 @@ table th a {
     color: #FFFFFF !important;
 }
 table td, .cat-list-row0 td, .cat-list-row1 td {
-    border-bottom: 1px solid #EEEEEE;
-    border-right: 1px solid #EEEEEE;
-	border-left: 1px solid #EEEEEE;
+    border-bottom: 0px solid #EEEEEE
+    border-right: 0px solid #EEEEEE;
+	border-left: 0px solid #EEEEEE;
 	padding: 4px 4px 4px 10px;
 }
 

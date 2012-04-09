@@ -1,8 +1,8 @@
 *  {	margin: 0;	padding: 0; }
 
 body  {
-	color:#444;
-	font-size:1.0em;
+	color:#333333;
+	font-size:1em;
 	line-height:140%;}
 
 body.contentpane, body.mceContentBody {	background:#FFFFFF;}
@@ -329,7 +329,17 @@ font-size:0.9em;
 float:left;
 }
 
-
+#s5_shape5_logo {
+width:82px;
+height:25px;
+margin-left:125px;
+margin-right:125px;
+margin-top:30px;
+margin-bottom:40px;
+background:url();
+cursor:pointer;
+display:block;
+}
 
 #s5_header_wrap {
 background:#1A1A1A;
@@ -339,8 +349,7 @@ border-radius:6px 6px 0px 0px;
 }
 
 #s5_logo {
-margin-left:10px;
-
+float: left;padding-leftt:127px;
 cursor: pointer;
 background:url(../images/s5_logo.png) no-repeat top left;
 }

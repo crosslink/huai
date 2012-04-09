@@ -23,11 +23,11 @@ $login = CKunenaLogin::getloginFields();
 					<div class="input">
 						<span>
 							<?php echo JText::_('COM_KUNENA_A_USERNAME'); ?>
-							<input type="text" name="<?php echo $login['field_username']; ?>" class="inputbox ks" alt="username" size="12" />
+							<input type="text" name="<?php echo $login['field_username']; ?>" class="inputbox ks" alt="username" size="10" />
 						</span>
 						<span>
 							<?php echo JText::_('COM_KUNENA_PASS'); ?>
-							<input type="password" name="<?php echo $login['field_password']; ?>" class="inputbox ks" size="12" alt="password" /></span>
+							<input type="password" name="<?php echo $login['field_password']; ?>" class="inputbox ks" size="10" alt="password" /></span>
 						<span>
 							<?php if(JPluginHelper::isEnabled('system', 'remember')) : ?>
 							<?php echo JText::_('COM_KUNENA_LOGIN_REMEMBER_ME');  ?>

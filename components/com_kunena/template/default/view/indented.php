@@ -1,13 +1,5 @@
 <?php
-/**
- * @version $Id$
- * Kunena Component
- * @package Kunena
- *
- * @Copyright (C) 2008 - 2011 Kunena Team. All rights reserved.
- * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
- * @link http://www.kunena.org
- **/
+
 
 // Dont allow direct linking
 defined( '_JEXEC' ) or die();
@@ -17,7 +9,7 @@ $document->addScriptDeclaration('// <![CDATA[
 var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 // ]]>');
 ?>
-
+<div><?php $this->displayPathway(); ?></div>
 
 <?php if ($this->headerdesc) : ?>
 	<div id="kforum-head" class="<?php echo isset ( $this->catinfo->class_sfx ) ? ' kforum-headerdesc' . $this->escape($this->catinfo->class_sfx) : '' ?>">
@@ -32,7 +24,7 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 ?>
 
 <div class="kblock">
-	<div class="kheader">
+	<div class="kmsg-header kmsg-header-left">
 		<h2><span><?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->kunena_topic_title) ?></span></h2>
 		<?php if ($this->favorited) : ?><div class="kfavorite"></div><?php endif ?>
 	</div>

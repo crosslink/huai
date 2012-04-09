@@ -10,7 +10,7 @@ $Breturn = $kuri->toString ( array ('path', 'query', 'fragment' ) );
 $this->app->setUserState( "com_kunena.ActionBulk", JRoute::_( $Breturn ) );
 ?>
 <div class="kblock kflat">
-	<div class="kheader">
+	<div class="kmsg-header kmsg-header-left">
 		<?php if (count($this->actionDropdown) > 1) : ?>
 		<?php if ($this->func == 'favorites' || $this->func == 'subscriptions') { ?>
 		<span class="kcheckbox select-toggle"><input id="kcbcheckall_<?php echo $this->func ?>" type="checkbox" name="toggle" value="" /></span>
@@ -18,7 +18,7 @@ $this->app->setUserState( "com_kunena.ActionBulk", JRoute::_( $Breturn ) );
 		<span class="kcheckbox select-toggle"><input id="kcbcheckall" type="checkbox" name="toggle" value="" /></span>
 		<?php } ?>
 		<?php endif; ?>
-		<h2><span><?php if (!empty($this->header)) echo $this->header; ?></span></h2>
+		<h2><span>&nbsp;&nbsp;<?php if (!empty($this->header)) echo $this->header; ?></span></h2>
 	</div>
 	<div class="kcontainer">
 		<div class="kbody">
@@ -131,8 +131,8 @@ $this->app->setUserState( "com_kunena.ActionBulk", JRoute::_( $Breturn ) );
 			</td>
 			<td class="kcol-mid kcol-ktopicviews">
 				<!-- Views -->
-				<span class="ktopic-views-number"><?php echo CKunenaTools::formatLargeNumber ( intval($leaf->hits) );?></span>
-				<span class="ktopic-views"> <?php echo JText::_('COM_KUNENA_GEN_HITS');?> </span>
+				<span class="ktopic-posted-time"><?php echo CKunenaTools::formatLargeNumber ( intval($leaf->hits) );?></span><br>
+				<span class="ktopic-posted-time"> <?php echo JText::_('COM_KUNENA_GEN_HITS');?> </span>
 				<!-- /Views -->
 			</td>
 			<?php if ($this->showposts):?>

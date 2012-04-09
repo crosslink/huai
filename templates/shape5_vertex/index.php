@@ -134,20 +134,20 @@ require("vertex/mobile_device_layout.php");
 		<div id="s5_header_area_inner" class="s5_wrap">		
 		<div id="s5_header_area_inner2">	
 			<div id="s5_header_wrap">
-			
+			<table><tr><td>
 				<?php if($s5_pos_logo == "published") { ?>
 					<div id="s5_logo_module" style="height:<?php echo $s5_logo_height ?>px;width:<?php echo $s5_logo_width ?>px">
-						<?php s5_module_call('logo','notitle'); ?>
+						<?php s5_module_call('logo','notitle'); ?>&nbsp;&nbsp;&nbsp;
 					</div>	
 				<?php } else { ?>
 					<div id="s5_logo" style="height:<?php echo $s5_logo_height ?>px;width:<?php echo $s5_logo_width ?>px" onclick="window.document.location.href='<?php echo $LiveSiteUrl ?>'"></div>
-				<?php } ?>
+				<?php } ?></td><td>
 				
 				<?php if($s5_pos_banner == "published") { ?>
-					<div id="s5_banner" style="padding-left:<?php echo $s5_logo_width + 10 ?>px">
+					<div id="s5_banner" >
 						<?php s5_module_call('banner','raw'); ?>
 					</div>
-				<?php } ?>
+				<?php } ?></td></tr></table>
 				
 				<div style="clear:both; height:0px"></div>			
 			</div>
