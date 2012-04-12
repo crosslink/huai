@@ -23,7 +23,7 @@ document.addEvent('domready', function() {
 <div class="kblock kadvsearch">
 	<div class="kheader">
 		<span class="ktoggler"><a class="ktoggler <?php echo $advsearch_class; ?>" title="<?php echo $advsearch_title ?>" rel="advsearch"></a></span>
-		<h2><span><?php echo JText::_('COM_KUNENA_SEARCH_ADVSEARCH'); ?></span></h2>
+		<span><?php echo JText::_('COM_KUNENA_SEARCH_ADVSEARCH'); ?></span>
 	</div>
 	<div class="kcontainer">
 		<div class="kbody">
@@ -35,7 +35,7 @@ document.addEvent('domready', function() {
 					<fieldset class="fieldset">
 						<legend><?php echo JText::_('COM_KUNENA_SEARCH_SEARCHBY_KEYWORD'); ?></legend>
 						<label class="searchlabel" for="keywords"><?php echo JText::_('COM_KUNENA_SEARCH_KEYWORDS'); ?>:</label>
-						<input id="keywords" type="text" class="ks input" name="q" size="30" value="<?php echo $this->escape($this->q); ?>"/>
+						<input id="keywords" type="text" class="ks input" name="q" size="20" value="<?php echo $this->escape($this->q); ?>"/>
 						<select id="keywordfilter" class="ks" name="titleonly">
 							<option value="0"<?php if ($this->params['titleonly']==0) echo $this->selected;?>><?php echo JText::_('COM_KUNENA_SEARCH_SEARCH_POSTS'); ?></option>
 							<option value="1"<?php if ($this->params['titleonly']==1) echo $this->selected;?>><?php echo JText::_('COM_KUNENA_SEARCH_SEARCH_TITLES'); ?></option>
@@ -65,8 +65,8 @@ document.addEvent('domready', function() {
 			<tr>
 				<th colspan="2">
 					<div class="ksth">
-						<span class="ktoggler" id="search_opt_status"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="advsearch_options"></a></span>
-						<h2><span><?php echo JText::_('COM_KUNENA_SEARCH_OPTIONS'); ?></span></h2>
+					
+						<span>&nbsp;&nbsp;<?php echo JText::_('COM_KUNENA_SEARCH_OPTIONS'); ?></span>
 					</div>
 				</th>
 			</tr>

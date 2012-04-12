@@ -9,19 +9,16 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 ?>
 
 
-
-		
+	<div class="kcontainer" id="ksearchresult">
+		<div class="kbody">
+	
+<table>
+	<tbody>
+		<tr>
+			<td>
 				<?php foreach ( $this->results as $result ) : ?>
 					<table>
-						<thead>
-							<tr class="ksth">
-								<th colspan="2">
-									<span class="kmsgtitle">
-									<?php echo CKunenaLink::GetThreadPageLink ( 'view', intval($result->catid), intval($result->id), NULL, NULL, $result->htmlsubject, intval($result->id) )?></span><span class="kfooter-time"> &nbsp;&nbsp;&nbsp;/&nbsp;<?php echo $this->escape($result->name) ?>&nbsp;/&nbsp;<?php echo CKunenaTimeformat::showDate ( $result->time )?>
-									</span>
-								</th>
-							</tr>
-						</thead>
+						
 						<tbody>
 							<?php $k = 0; if ($this->total == 0 && $this->int_kunena_errornr) : ?>
 							<tr class="k<?php echo $this->tabclass [$k] ?>" >
@@ -33,19 +30,29 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 							<tr>
 								
 								<td class="kmessage-left resultmsg">
-									
-										<div class="kmsgtext resultmsg">
+									<div class="kmsgbody">
+										<div class="kmsgtitle kresult-title">
+											<span class="kmsgtitle">
+												<?php echo CKunenaLink::GetThreadPageLink ( 'view', intval($result->catid), intval($result->id), NULL, NULL, $result->htmlsubject, intval($result->id) )?>
+											</span><span class="kchildcount ks"><?php echo $this->escape($result->name) ?>&nbsp;&nbsp;
+										<?php echo CKunenaTimeformat::showDate ( $result->time )?>
+									</span>
+								</th>
+										</div>
+										<div class="kmsgtext1 resultmsg">
 											<?php echo $result->htmlmessage ?>
 										</div>
-											
+										
 									</div>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				<?php endforeach; ?>
-
-			<span>
+			</td>
+		</tr>
+		<tr class="ksth">
+			<th colspan="3">
 			<?php
 			$resStart = $this->limitstart + 1;
 			$resStop = $this->limitstart + count ( $this->results );
@@ -59,5 +66,9 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 			<?php if ($this->total > $this->limit) : ?>
 			<?php echo $this->pagination; ?>
 			<?php endif; ?>
-			</span>
-
+			</th>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
