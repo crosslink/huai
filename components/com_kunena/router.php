@@ -179,11 +179,11 @@ class KunenaRouter {
 			if ($catid != 0) {
 				$catfound = true;
 
-				if (self::$catidcache === null)
-					self::loadCategories ();
-				if (isset ( self::$catidcache [$catid] )) {
-					$suf = self::stringURLSafe ( self::$catidcache [$catid] ['name'] );
-				}
+// 				if (self::$catidcache === null)
+// 					self::loadCategories ();
+// 				if (isset ( self::$catidcache [$catid] )) {
+// 					$suf = self::stringURLSafe ( self::$catidcache [$catid] ['name'] );
+// 				}
 				if (empty ( $suf ))
 					// If translated category name is empty, use catid: 123
 					$segments [] = $query ['catid'];
@@ -203,18 +203,18 @@ class KunenaRouter {
 		}
 
 		if ($catfound && isset ( $query ['id'] )) {
-			$id = $query ['id'];
-			if (! isset ( self::$msgidcache [$id] )) {
-				$quesql = 'SELECT subject, id FROM #__kunena_messages WHERE id=' . ( int ) $id;
-				$db->setQuery ( $quesql );
-				self::$msgidcache [$id] = $db->loadResult ();
-				if (KunenaError::checkDatabaseError()) return;
-			}
-			$suf = self::stringURLSafe ( self::$msgidcache [$id] );
-			if (empty ( $suf ))
+// 			$id = $query ['id'];
+// 			if (! isset ( self::$msgidcache [$id] )) {
+// 				$quesql = 'SELECT subject, id FROM #__kunena_messages WHERE id=' . ( int ) $id;
+// 				$db->setQuery ( $quesql );
+// 				self::$msgidcache [$id] = $db->loadResult ();
+// 				if (KunenaError::checkDatabaseError()) return;
+// 			}
+// 			$suf = self::stringURLSafe ( self::$msgidcache [$id] );
+// 			if (empty ( $suf ))
 				$segments [] = $query ['id'];
-			else
-				$segments [] = $query ['id'] . '-' . $suf;
+// 			else
+// 				$segments [] = $query ['id'] . '-' . $suf;
 			unset ( $query ['id'] );
 		}
 
