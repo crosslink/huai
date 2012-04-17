@@ -1021,7 +1021,7 @@ require("vertex/mobile_device_layout.php");
 	<?php require("vertex/includes/vertex_includes_bottom.php"); ?>
 	</div>
 	
-	<a title="shape5.com" href="http://www.shape5.com" target="blank" id="s5_shape5_logo"></a>
+	
 	
 	<?php s5_module_call('debug','fourdivs'); ?>
 	

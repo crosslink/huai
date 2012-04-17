@@ -438,7 +438,7 @@ if ($kunena_config->board_offline && ! CKunenaTools::isAdmin ()) {
 	}
 
 	CKunenaTools::loadTemplate('/menu.php');
-	CKunenaTools::displayLoginBox();
+
 
  	if(JDEBUG){
 		$__profiler->mark('Profilebox End');
@@ -796,15 +796,7 @@ if ($kunena_config->board_offline && ! CKunenaTools::isAdmin ()) {
 
 	$template = KunenaFactory::getTemplate();
 	$this->params = $template->params;
-	// Credits
-	echo '<div class="kcredits kms"> ' . CKunenaLink::GetTeamCreditsLink ( $catid, JText::_('COM_KUNENA_POWEREDBY') ) . ' ' . CKunenaLink::GetCreditsLink ();
-		if ($this->params->get('templatebyText') !=''):
-	echo ' :: <a href ="'. $this->params->get('templatebyLink').'" rel="follow">' . $this->params->get('templatebyText') ;
-	if ($this->params->get('templatebyName')) {
-	echo ' '.$this->params->get('templatebyName') .'</a>';
-	} else { echo '</a>'; }
-	endif;
-	echo '</div>';
+	
 
 	// display footer
 

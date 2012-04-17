@@ -10,7 +10,7 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 
 
 	<div class="kcontainer" id="ksearchresult">
-		<div class="kbody">
+
 	
 <table>
 	<tbody>
@@ -41,6 +41,11 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 										</div>
 										<div class="kmsgtext1 resultmsg">
 											<?php echo $result->htmlmessage ?>
+
+
+
+
+
 										</div>
 										
 									</div>
@@ -70,5 +75,5 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 		</tr>
 	</tbody>
 </table>
-</div>
+
 </div>

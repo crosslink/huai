@@ -17,7 +17,7 @@ $csite_name	= $app->getCfg('sitename');
 ?>
 <span class="footerc">
 Copyright &copy; <?php echo $cur_year;?>.  <?php echo $csite_name;?>.
-Designed by Shape5.com <a href="http://www.shape5.com/" class="footerc" title="Visit Shape5.com Joomla Template Club" target="blank">Joomla Templates</a>
+Powered by Shape5.com 
 </span>
 
 <script type="text/javascript">

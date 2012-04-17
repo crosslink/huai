@@ -14,6 +14,6 @@ jimport( 'joomla.document.html.html' );
 		</div>
 		<!-- /Kunena Module Position: kunena_menu -->
 	<?php endif; ?>
-	<span class="ktoggler fltrt"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="kprofilebox"></a></span>
+	
 </div>
 <!-- /Kunena Menu -->

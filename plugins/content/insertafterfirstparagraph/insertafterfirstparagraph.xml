@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="plugin" group="content" method="upgrade">
+  <name>Insert After First Paragraph</name>
+  <author>P.J. Swesey</author>
+  <creationDate>June 28th, 2011</creationDate>
+  <copyright>(C)2011 JoomlaDigger.com. All rights reserved.</copyright>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+  <authorEmail>webmaster@joomladigger.com</authorEmail>
+  <authorUrl>http://joomladigger.com</authorUrl>
+  <version>1.1.1</version>
+
+  <description>
+    Insert After First Paragraph will insert any HTML or JavaScript code into your articles. It can insert different chunks of code after the first paragraph, before the last paragraph, at the start of your article, at the start just inside your first paragraph, at the end of your article, at the end just inside the last paragraph, and/or after the nth paragraph.
+  </description>
+
+  <files>
+    <filename plugin="insertafterfirstparagraph">insertafterfirstparagraph.php</filename>
+    <filename>insertafterfirstparagraph.xml</filename>
+  </files>
+
+  <params>
+    <param name="after_first_p" type="textarea" default="" label="After First Paragraph" description="This HTML will be inserted into every article after the first paragraph when the full article is displayed." rows="12" cols="50" />
+		<param type="spacer" />
+		
+		<param name="before_last_p" type="textarea" default="" label="Before Last Paragraph" description="This HTML will be inserted into every article before the last paragraph when the full article is displayed." rows="12" cols="50" />
+		<param type="spacer" />
+		
+		<param name="start" type="textarea" default="" label="Beginning of Article" description="This HTML will be inserted before every article when the full article is displayed." rows="12" cols="50" />
+		<param type="spacer" />
+		
+		<param name="start_in_p" type="textarea" default="" label="Beginning in Paragraph" description="This HTML will be inserted at the beginning of every article just inside the first paragraph, when the full article is displayed." rows="12" cols="50" />
+		<param type="spacer" />
+		
+		<param name="end" type="textarea" default="" label="End of Article" description="This HTML will be inserted at the end of every article when the full article is displayed." rows="12" cols="50" />
+		<param type="spacer" />
+		
+		<param name="end_in_p" type="textarea" default="" label="End in Paragraph" description="This HTML will be inserted at the end of every article just inside the last paragraph, when the full article is displayed." rows="12" cols="50" />
+		<param type="spacer" />
+				
+		<param name="after_n_p" type="textarea" default="" label="After the Nth Paragraph" description="This HTML will be inserted after the Nth paragraph when the full article is displayed." rows="12" cols="50" />
+		<param name="n" type="text" default="2" label="N" description="The HTML from the previous textarea will be inserted after this number of paragraphs."/>
+		<param type="spacer" />
+
+		<param name="excluded_categories" type="text" default="" label="Excluded Categories" description="Comma-separated list of category IDs to exclude. Add 0 to not display these buttons on uncategorized articles."/>
+  </params>
+
+</install>

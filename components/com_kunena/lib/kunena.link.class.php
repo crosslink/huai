@@ -195,7 +195,7 @@ class CKunenaLink {
 		if (! empty ( $msg_ip )) {
 			//$iplink = '<a href="http://whois.domaintools.com/' . $msg_ip . '" target="_blank">';
 			//$iplink .= 'IP: ' . $msg_ip . '</a>';
-			$iparray = explode(".", $msg_id);
+			$iparray = explode(".", $msg_ip);
 			$iparray[0] = '*';
 			$iparray[1] = '*';
 			$hidden_ip = implode(".", $iparray);
