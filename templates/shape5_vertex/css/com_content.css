@@ -299,7 +299,7 @@ address {padding-top:4px;padding-bottom:4px;}
 
 div.category-desc {padding-bottom: 20px; padding-top: 13px;}
 
-th {
+th{
     font-weight: bold;
     padding: 5px 0;
     text-align: left;
@@ -331,7 +331,7 @@ table.weblinks, table.category {
     margin: 10px 0 20px 0;
     width: 100%;
 }
-table.weblinks th, table.category th {
+table.weblinks th, table.category th{
     border: 1px solid #444444;
     font-size: 1em;
     font-weight: normal;
@@ -339,13 +339,16 @@ table.weblinks th, table.category th {
 table.weblinks th:first-child, table.category th:first-child {
     border-left: medium none;
 }
-table th {
+table th{
     background: none repeat scroll 0 0 #222222;
     color: #FFFFFF;
     padding: 6px 10px;
 }
 table th a {
     color: #FFFFFF !important;
+}
+table tb a {
+    color: #000000 !important;
 }
 table td, .cat-list-row0 td, .cat-list-row1 td {
     border-bottom: 0px solid #EEEEEE

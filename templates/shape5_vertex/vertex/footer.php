@@ -17,8 +17,9 @@ $csite_name	= $app->getCfg('sitename');
 ?>
 <span class="footerc">
 Copyright &copy; <?php echo $cur_year;?>.  <?php echo $csite_name;?>.
-Powered by Shape5.com 
+Powered by Shape5 
 </span>
+
 
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");

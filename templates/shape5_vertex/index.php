@@ -1,21 +1,13 @@
 <?php
 require('vertex/cms_core_functions.php');
 s5_restricted_access_call();
-/*
------------------------------------------
-Vertex - January 2012 - Shape 5 Club Design
------------------------------------------
-Site:      shape5.com
-Email:     contact@shape5.com
-@license:  GPL
-@copyright (C) 2012 Shape 5 LLC
 
-*/
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php s5_language_call(); ?>>
 <head>
+
 <?php s5_head_call(); ?>
 <?php
 require("vertex/parameters.php");
@@ -37,7 +29,7 @@ require("vertex/includes/vertex_includes_header.php");
 <?php } ?>
 
 <style type="text/css"> 
-body {font-family: '<?php echo $s5_fonts;?>',Helvetica,Arial,Sans-Serif ;
+body {font-family: 'Tahoma,Microsoft Yahei,Simsun,Helvetica Neue,Luxi Sans,DejaVu Sans,Hiragino Sans GB,STHeiti,<?php echo $s5_fonts;?>' ;
 background:#<?php echo $s5_page_bg ?>;
 } 
 
@@ -61,7 +53,7 @@ overflow:hidden;
 display:none;
 }
 #s5_nav li {
-height:37px;
+height:25px;
 }
 #s5_search input {
 margin-top:0px;

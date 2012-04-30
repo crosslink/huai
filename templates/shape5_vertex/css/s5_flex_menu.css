@@ -120,10 +120,10 @@ margin-top:2px;
 	position:relative;
 	float:left;
 	height:25px;
-	padding-right:7.01px;
+	padding-right:9.01px;
 	padding-top:0.01px;
 	padding-bottom:0px;
-	padding-left:7.01px;
+	padding-left:9.01px;
 	overflow:hidden;
 	border-right:solid 1px #222222;
 }
@@ -147,7 +147,7 @@ margin-top:2px;
 
 #s5_nav li .s5_level1_span1 {
 background:none;
-height:25px;
+height:15px;
 display:block;
 }
 

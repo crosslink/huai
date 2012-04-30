@@ -36,7 +36,7 @@ PX		EM			PCT			PT
 	padding: 0;
 	margin: 0;
 	line-height: 1.333em;
-	min-width:700px;
+	min-width:200px;
 }
 
 #Kunena table tr th,
@@ -363,6 +363,7 @@ PX		EM			PCT			PT
 	border: 1px solid;
 	float: left;
 }
+
 
 #Kunena img.klist-avatar,
 #Kunena .klist-avatar {

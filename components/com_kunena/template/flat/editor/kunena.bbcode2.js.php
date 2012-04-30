@@ -65,33 +65,7 @@ kbbcode.addFunction('Italic', function() {
 	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_ITALIC');?>',
 	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_ITALIC');?>")'});
 
-kbbcode.addFunction('Underline', function() {
-	this.wrapSelection('[u]', '[/u]', false);
-}, {'id': 'kbbcode-underline-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_UNDERL');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_UNDERL');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_UNDERL');?>")'});
 
-kbbcode.addFunction('Strike', function() {
-	this.wrapSelection('[strike]', '[/strike]', false);
-}, {'id': 'kbbcode-strike-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_STRIKE');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_STRIKE');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_STRIKE');?>")'});
-
-kbbcode.addFunction('Sub', function() {
-	this.wrapSelection('[sub]', '[/sub]', false);
-}, {'id': 'kbbcode-sub-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_SUB');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_SUB');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_SUB');?>")'});
-
-kbbcode.addFunction('Sup', function() {
-	this.wrapSelection('[sup]', '[/sup]', false);
-}, {'id': 'kbbcode-sup-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_SUP');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_SUP');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_SUP');?>")'});
 
 kbbcode.addFunction('Size', function() {
 	kToggleOrSwap("kbbcode-size-options");
@@ -100,86 +74,13 @@ kbbcode.addFunction('Size', function() {
 	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_FONTSIZE');?>',
 	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_FONTSIZE');?>")'});
 
-kbbcode.addFunction('Color', function() {
-	kToggleOrSwap("kbbcode-colorpalette");
-}, {'id': 'kbbcode-color-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_COLOR');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_COLOR');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_COLOR');?>")'});
 
-kbbcode.addFunction('#', function() {
-}, {'id': 'kbbcode-separator1'});
 
-<?php
-//adding a "List" button that will create a new list if nothing is selected
-//or make each line of the selection into a list item if some text is selected...
- ?>
-kbbcode.addFunction("uList", function() {
-	selection = this.getSelection();
-	if (selection == "") {
-		this.wrapSelection("\n[ul]\n  [li]", "[/li]\n  [li][/li]\n[/ul]", false);
-	}
-	else {
-		this.processEachLine(function(line) {
-			newline = "  [li]" + line + "[/li]";
-			return newline;
-		}, false);
-		this.insert("[ul]\n", "before", false);
-		this.insert("\n[/ul]\n", "after", true); //now isLast is set to true, because it is the last one!
-	}
-}, {'id': 'kbbcode-ulist-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_ULIST');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_ULIST');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_ULIST');?>")'});
 
-kbbcode.addFunction("oList", function() {
-	selection = this.getSelection();
-	if (selection == "") {
-		this.wrapSelection("\n[ol]\n  [li]", "[/li]\n  [li][/li]\n[/ol]", false);
-	}
-	else {
-		this.processEachLine(function(line) {
-			newline = "  [li]" + line + "[/li]";
-			return newline;
-		}, false);
-		this.insert("[ol]\n", "before", false);
-		this.insert("\n[/ol]\n", "after", true); //now isLast is set to true, because it is the last one!
-	}
-}, {'id': 'kbbcode-olist-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_OLIST');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_OLIST');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_OLIST');?>")'});
 
-kbbcode.addFunction('List', function() {
-	this.wrapSelection('  [li]', '[/li]', false);
-}, {'id': 'kbbcode-list-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_LIST');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LIST');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LIST');?>")'});
 
-kbbcode.addFunction('Left', function() {
-	this.wrapSelection('[left]', '[/left]', false);
-}, {'id': 'kbbcode-left-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_LEFT');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LEFT');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LEFT');?>")'});
 
-kbbcode.addFunction('Center', function() {
-	this.wrapSelection('[center]', '[/center]', false);
-}, {'id': 'kbbcode-center-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_CENTER');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_CENTER');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_CENTER');?>")'});
 
-kbbcode.addFunction('Right', function() {
-	this.wrapSelection('[right]', '[/right]', false);
-}, {'id': 'kbbcode-right-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_RIGHT');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_RIGHT');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_RIGHT');?>")'});
-
-kbbcode.addFunction('#', function() {
-}, {'id': 'kbbcode-separator2'});
 
 kbbcode.addFunction('Quote', function() {
 	this.wrapSelection('[quote]', '[/quote]', false);
@@ -267,9 +168,6 @@ kbbcode.addFunction('Link', function() {
 	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_LINK');?>',
 	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LINK');?>',
 	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_LINK');?>")'});
-
-kbbcode.addFunction('#', function() {
-}, {'id': 'kbbcode-separator4'});
 <?php
 /*
 kbbcode.addFunction('Gallery', function() {
@@ -304,16 +202,14 @@ kbbcode.addFunction('Video', function() {
 	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_VIDEO');?>',
 	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_VIDEO');?>',
 	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_VIDEO');?>")'});
+
+
+
 <?php
 }
 ?>
 
-kbbcode.addFunction('Map', function() {
-	this.wrapSelection('[map]', '[/map]', false);
-}, {'id': 'kbbcode-map-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_MAP');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_MAP');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_MAP');?>")'});
+
 
 <?php if (1==0) { // disable for now TODO: make safe - dont allow public to access modules?>
 kbbcode.addFunction('Module', function() {
@@ -322,53 +218,37 @@ kbbcode.addFunction('Module', function() {
 	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_MODULE');?>',
 	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_MODULE');?>',
 	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_MODULE');?>")'});
+
+
+
 <?php } // end disable ?>
 
-kbbcode.addFunction('#', function() {
-}, {'id': 'kbbcode-separator6'});
 
 <?php if ($this->my->id != 0) { ?>
-kbbcode.addFunction('PreviewBottom', function() {
-	kToggleOrSwapPreview("kbbcode-preview-bottom");
-}, {'id': 'kbbcode-previewbottom-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_PREVIEWBOTTOM');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_PREVIEWBOTTOM');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_PREVIEWBOTTOM');?>")'});
 
-kbbcode.addFunction('PreviewRight', function() {
-	kToggleOrSwapPreview("kbbcode-preview-right");
-}, {'id': 'kbbcode-previewright-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_PREVIEWRIGHT');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_PREVIEWRIGHT');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_PREVIEWRIGHT');?>")'});
 
-kbbcode.addFunction('#', function() {
-}, {'id': 'kbbcode-separator7'});
+
+
+
+
 
 <?php } ?>
 
-kbbcode.addFunction('Help', function() {
-	window.open('http://docs.kunena.org/index.php/bbcode');
-}, {'id': 'kbbcode-help-button',
-	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_HELP');?>',
-	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_HELP');?>',
-	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_HELP');?>")'});
 
-$('kbbcode-message').addEvent('change', function(){
-	kPreviewHelper();
-});
+
+
+
+
 
 <?php
 // Add the click behaviors for our bbcode options
 ?>
-	var color = $$("table.kbbcode-colortable td");
-	if (color) {
-		color.addEvent("click", function(){
-			var bg = this.getStyle( "background-color" );
-			kbbcode.wrapSelection('[color='+ bg +']', '[/color]', false);
-			kToggleOrSwap("kbbcode-colorpalette");
-		});
-	}
+	
+
+
+
+
+
 	var size = $$("div#kbbcode-size-options span");
 	if (size) {
 		size.addEvent("click", function(){

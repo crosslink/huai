@@ -56,13 +56,9 @@ $kunena_config = KunenaFactory::getConfig ();
 				echo JText::_('COM_KUNENA_EDITOR_SIZE_SAMPLETEXT');
 				?>&nbsp;</span>
 			</div>
-			<div id="kbbcode-colorpalette" style="display: none;">
-				<script type="text/javascript">kGenerateColorPalette('4%', '15px');</script>
-			</div>
-
-			<div id="kbbcode-link-options" style="display: none;">
+						<div id="kbbcode-link-options" style="display: none;">
 				<?php echo JText::_('COM_KUNENA_EDITOR_LINK_URL'); ?>&nbsp;
-				<input id="kbbcode-link_url" name="url" type="text" size="40" value="http://"
+				<input id="kbbcode-link_url" name="url" type="text" size="40" value=""
 					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_LINKURL'); ?>')" />
 				<?php echo JText::_('COM_KUNENA_EDITOR_LINK_TEXT'); ?>&nbsp;
 				<input name="text2" id="kbbcode-link_text" type="text" size="30" maxlength="150"
@@ -75,9 +71,9 @@ $kunena_config = KunenaFactory::getConfig ();
 			<div id="kbbcode-image-options" style="display: none;">
 				<?php echo JText::_('COM_KUNENA_EDITOR_IMAGELINK_SIZE'); ?>&nbsp;
 				<input id="kbbcode-image_size" name="size" type="text" size="10" maxlength="10"
-					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKSIZE'); ?>')" />
+ value="400"					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKSIZE'); ?>')" />
 				<?php echo JText::_('COM_KUNENA_EDITOR_IMAGELINK_URL'); ?>&nbsp;
-				<input name="url2" id="kbbcode-image_url" type="text" size="40" value="http://"
+				<input name="url2" id="kbbcode-image_url" type="text" size="40" value=""
 					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKURL'); ?>')" />&nbsp;
 				<input type="button" name="Link" value="<?php echo JText::_('COM_KUNENA_EDITOR_INSERT'); ?>" onclick="kInsertImageLink()"
 					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKAPPLY'); ?>')" />
@@ -140,7 +136,7 @@ $kunena_config = KunenaFactory::getConfig ();
 				echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_VIDEOPROVIDER');
 				?>')">
 				<?php
-				$vid_provider = array ('', 'AnimeEpisodes', 'Biku', 'Bofunk', 'Break', 'Clip.vn', 'Clipfish', 'Clipshack', 'Collegehumor', 'Current', 'DailyMotion', 'DivX,divx]http://', 'DownloadFestival', 'Flash,flash]http://', 'FlashVars,flashvars param=]http://', 'Fliptrack', 'Fliqz', 'Gametrailers', 'Gamevideos', 'Glumbert', 'GMX', 'Google', 'GooglyFoogly', 'iFilm', 'Jumpcut', 'Kewego', 'LiveLeak', 'LiveVideo', 'MediaPlayer,mediaplayer]http://', 'MegaVideo', 'Metacafe', 'Mofile', 'Multiply', 'MySpace', 'MyVideo', 'QuickTime,quicktime]http://', 'Quxiu', 'RealPlayer,realplayer]http://', 'Revver', 'RuTube', 'Sapo', 'Sevenload', 'Sharkle', 'Sinavideo', 'Spikedhumor', 'Stickam', 'Streetfire', 'StupidVideos', 'Toufee', 'Tudou', 'Unf-Unf', 'Uume', 'Veoh', 'VideoclipsDump', 'Videojug', 'VideoTube', 'Vidiac', 'VidiLife', 'Vimeo', 'WangYou', 'WEB.DE', 'Wideo.fr', 'YouKu', 'YouTube' );
+				$vid_provider = array ( 'YouKu', 'Tudou', 'Google','Facebook','YouTube');
 				foreach ( $vid_provider as $vid_type ) {
 					$vid_type = explode ( ',', $vid_type );
 					echo '<option value = "' . (! empty ( $vid_type [1] ) ? $this->escape($vid_type [1]) : JString::strtolower ( $this->escape($vid_type [0]) ) . '') . '">' . $this->escape($vid_type [0]) . '</option>';
@@ -164,7 +160,7 @@ $kunena_config = KunenaFactory::getConfig ();
 			<?php
 			echo JText::_('COM_KUNENA_EDITOR_VIDEO_URL');
 			?><input id="kvideourl" name="videourl"
-				type="text" size="30" maxlength="250" value="http://"
+				type="text" size="30" maxlength="250" value=""
 				onmouseover="javascript:document.id('helpbox').set('value', '<?php
 				echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_VIDEOURL');
 				?>')" />
