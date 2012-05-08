@@ -60,7 +60,7 @@ class CKunenaShowcat {
 		if (KunenaError::checkDatabaseError()) return;
 		
 		/*
-		 * MODIFIED BY HUAI for customization
+		 * MODIFIED BY HUAI for customization by Monfee
 		 * 
 		 */
 		/*******************  BEGIN *************************/
