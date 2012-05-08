@@ -273,6 +273,12 @@ class CKunenaListcat {
 		CKunenaTools::loadTemplate('/categories/categories.php');
 	}
 
+	function displayCategories1() {
+		$this->loadCategories();
+		CKunenaTools::loadTemplate('/categories/categories1.php');
+	}
+
+
 	function displayStats() {
 		if ($this->config->showstats > 0) {
 			require_once(KUNENA_PATH_LIB . '/kunena.stats.class.php');

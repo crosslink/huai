@@ -7,7 +7,11 @@ defined ( '_JEXEC' ) or die ();
 <?php $this->displayPathway () ?>
 <!-- / Pathway -->
 
-<?php $this->displaySubCategories () ?>
+
+
+
+
+
 <?php if ($this->objCatInfo->headerdesc) : ?>
 <div class="kblock">
 	<div class="kmsg-header kmsg-header-left">
@@ -23,6 +27,8 @@ defined ( '_JEXEC' ) or die ();
 	</div>
 </div>
 <?php endif; ?>
+
+
 
 <!-- B: List Actions -->
 <table class="klist-actions">
@@ -57,6 +63,9 @@ defined ( '_JEXEC' ) or die ();
 	</tr>
 </table>
 <!-- F: List Actions -->
+
+
+<?php $this->displaySubCategories1 () ?>
 
 <?php $this->displayFlat (); ?>
 

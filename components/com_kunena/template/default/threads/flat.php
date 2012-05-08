@@ -20,6 +20,10 @@ $this->app->setUserState( "com_kunena.ActionBulk", JRoute::_( $Breturn ) );
 		<?php endif; ?>
 		<h2><span>&nbsp;&nbsp;<?php if (!empty($this->header)) echo $this->header; ?></span></h2>
 	</div>
+
+
+
+
 	<div class="kcontainer">
 		<div class="kbody">
 <form action="<?php echo JURI::root( true ) ?>/index.php" method="post" name="kBulkActionForm">

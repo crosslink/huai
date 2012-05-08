@@ -23,11 +23,25 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 	$this->displayThreadActions(0);
 ?>
 
+
+
+
+
+
+
+
 <div class="kblock">
 	<div class="kheader">
 		<h2><span><?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->kunena_topic_title) ?></span></h2>
 		<?php if ($this->favorited) : ?><div class="kfavorite"></div><?php endif ?>
 	</div>
+
+
+
+
+
+
+
 	<div class="kcontainer">
 		<div class="kbody">
 			<?php foreach ( $this->messages as $message ) $this->displayMessage($message) ?>

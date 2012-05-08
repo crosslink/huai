@@ -324,7 +324,7 @@ td p {
     margin-right: 7px;
     text-align: right;
 }
-table, table td {
+table, table td,table td1{
     border-collapse: collapse;
 }
 table.weblinks, table.category {
