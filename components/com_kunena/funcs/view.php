@@ -506,7 +506,7 @@ class CKunenaView {
 
 		//update the hits counter for this topic & exclude the owner
 		if ($this->my->id == 0 || $this->first_message->userid != $this->my->id) {
-			$this->db->setQuery ( "UPDATE #__kunena_messages SET hits=hits+".mt_rand(1, 38)." WHERE id={$this->db->Quote($this->thread)} AND parent='0'" );
+			$this->db->setQuery ( "UPDATE #__kunena_messages SET hits=hits+1 WHERE id={$this->db->Quote($this->thread)} AND parent='0'" );
 			$this->db->query ();
 			KunenaError::checkDatabaseError();
 		}
@@ -522,7 +522,7 @@ class CKunenaView {
 			$this->redirect = CKunenaLink::GetThreadPageURL('view', $this->catid, $this->id, $page, $this->limit, '', false);
 		}
 
-		$maxpages = 7 - 2; // odd number here (show - 2)
+		$maxpages = 5 - 2; // odd number here (show - 2)
 		$totalpages = ceil ( $this->total_messages / $this->limit );
 		$page = floor ( $this->limitstart / $this->limit ) + 1;
 		$firstpage = 1;

@@ -7,16 +7,12 @@ defined ( '_JEXEC' ) or die ();
 <?php $this->displayPathway () ?>
 <!-- / Pathway -->
 
-
-
-
-
-
+<?php $this->displaySubCategories () ?>
 <?php if ($this->objCatInfo->headerdesc) : ?>
 <div class="kblock">
-	<div class="kmsg-header kmsg-header-left">
+	<div class="kheader">
 		<span class="ktoggler"><a class="ktoggler close" title="<?php echo JText::_('COM_KUNENA_TOGGLER_COLLAPSE') ?>" rel="frontstats_tbody"></a></span>
-		<h2><span>&nbsp;&nbsp;<?php echo JText::_('COM_KUNENA_FORUM_HEADER'); ?></span></h2>
+		<h2><span><?php echo JText::_('COM_KUNENA_FORUM_HEADER'); ?></span></h2>
 	</div>
 	<div class="kcontainer" id="frontstats_tbody">
 		<div class="kbody">
@@ -27,8 +23,6 @@ defined ( '_JEXEC' ) or die ();
 	</div>
 </div>
 <?php endif; ?>
-
-
 
 <!-- B: List Actions -->
 <table class="klist-actions">
@@ -55,7 +49,7 @@ defined ( '_JEXEC' ) or die ();
 			<?php
 			// pagination 1
 			if (count ( $this->messages ) > 0) {
-				$maxpages = 7 - 2; // odd number here (# - 2)
+				$maxpages = 9 - 2; // odd number here (# - 2)
 				echo $pagination = $this->getPagination ( $this->catid, $this->page, $this->totalpages, $maxpages );
 			}
 			?>
@@ -63,9 +57,6 @@ defined ( '_JEXEC' ) or die ();
 	</tr>
 </table>
 <!-- F: List Actions -->
-
-
-<?php $this->displaySubCategories1 () ?>
 
 <?php $this->displayFlat (); ?>
 
