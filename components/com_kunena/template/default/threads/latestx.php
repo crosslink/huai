@@ -17,10 +17,7 @@ CKunenaTools::showModulePosition ( 'kunena_announcement' );
 			<?php echo $this->escape($this->header); ?>
 		</td>
 <?php else: ?>
-		<td class="klist-actions-info-all">
-			<strong><?php echo $this->escape($this->total)?></strong>
-			<?php echo JText::_('COM_KUNENA_DISCUSSIONS')?>
-		</td>
+
 
 		
 		<td class="klist-jump-all">
@@ -32,7 +29,7 @@ CKunenaTools::showModulePosition ( 'kunena_announcement' );
 //pagination 1
 if (count ( $this->messages ) > 0) :
 	echo '<td class="klist-pages-all">';
-	$maxpages = 8 - 2; // odd number here (# - 2)
+	$maxpages = 5 - 2; // odd number here (# - 2)
 	echo $pagination = $this->getPagination ( $this->func, $this->show_list_time, $this->page, $this->totalpages, $maxpages );
 	echo '</td>';
 endif;
@@ -55,14 +52,15 @@ if (count ( $this->threads ) > 0) :
 			</strong>
 				<?php echo $this->mode=='posts' ? $this->escape($this->header) : JText::_('COM_KUNENA_DISCUSSIONS')?>
 		</td>
-			<?php
-				//pagination 1
-				if (count ( $this->messages ) > 0) :
-					echo '<td class="klist-pages-all">';
-					echo $pagination;
-					echo '</td>';
-				endif;
-			?>
+<?php
+//pagination 2
+if (count ( $this->messages ) > 0) :
+	echo '<td class="klist-pages-all">';
+	$maxpages = 8 - 2; // odd number here (# - 2)
+	echo $pagination = $this->getPagination ( $this->func, $this->show_list_time, $this->page, $this->totalpages, $maxpages );
+	echo '</td>';
+endif;
+?>
 	</tr>
 </table>
 <!-- F: List Actions -->

@@ -78,7 +78,7 @@ class CKunenaSearch {
 		$this->limit = JRequest::getInt ( 'limit', $this->config->messages_per_page_search );
 		extract ( $this->params );
 
-		if ($this->limit < 1 || $this->limit > 40)
+		if ($this->limit < 0 || $this->limit > 40)
 			$this->limit = $this->limit = $this->config->messages_per_page_search;
 
 		if (isset ( $_POST ['q'] ) || isset ( $_POST ['searchword'] )) {
@@ -102,7 +102,7 @@ class CKunenaSearch {
 		$this->arr_kunena_searchstrings = array ();
 		foreach ( $arr_searchwords as $q ) {
 			$q = JString::trim ( $q );
-			if (JString::strlen ( $q ) > 1)
+			if (JString::strlen ( $q ) > 0)
 				$do_search = TRUE;
 			$this->arr_kunena_searchstrings [] = $q;
 		}

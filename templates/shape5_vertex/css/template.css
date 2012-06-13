@@ -315,7 +315,7 @@ padding-top:10px;
 }
 
 #s5_component_wrap {
-padding:14px;
+padding:16px;
 }
 
 #s5_footer_area_inner2 {
@@ -499,6 +499,14 @@ margin-right:7px;
 margin-bottom:14px;
 }
 
+.module_round_box1_outer {
+margin-left:1px;
+margin-right:1px;
+margin-bottom:15px;
+margin-top:3px;
+}
+
+
 .s5_mod_h3 {
 font-size:1em;
 }
@@ -509,8 +517,10 @@ background:#FFFFFF;
 -webkit-border-radius:6px;
 border-radius:6px;
 border:solid 1px #C5C5C5;
-padding:20px;
-padding-bottom:16px;
+padding-top:12px;
+padding-bottom:12px;
+padding-left:20px;
+padding-right:20px
 }
 
 .module_round_box .s5_mod_h3 {
@@ -530,7 +540,7 @@ padding-left:13px;
 padding-right:13px;
 padding-top:12px;
 margin-left:-20px;
-margin-top:-20px;
+margin-top:-12px;
 margin-right:-20px;
 margin-bottom:12px;
 }

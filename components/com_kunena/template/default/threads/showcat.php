@@ -55,7 +55,7 @@ defined ( '_JEXEC' ) or die ();
 			<?php
 			// pagination 1
 			if (count ( $this->messages ) > 0) {
-				$maxpages = 9 - 2; // odd number here (# - 2)
+				$maxpages = 7 - 2; // odd number here (# - 2)
 				echo $pagination = $this->getPagination ( $this->catid, $this->page, $this->totalpages, $maxpages );
 			}
 			?>
