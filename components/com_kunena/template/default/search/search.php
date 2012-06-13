@@ -9,28 +9,16 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 ?>
 
 
-	<div class="kcontainer" id="ksearchresult">
+	<div >
 
 	
-<table>
-	<tbody>
-		<tr>
-			<td>
+
+		
 				<?php foreach ( $this->results as $result ) : ?>
-					<table>
+				
 						
-						<tbody>
-							<?php $k = 0; if ($this->total == 0 && $this->int_kunena_errornr) : ?>
-							<tr class="k<?php echo $this->tabclass [$k] ?>" >
-								<td>
-									<?php echo $this->escape($this->str_kunena_errormsg) ?>
-								</td>
-							</tr>
-							<?php endif; ?>
-							<tr>
-								
-								<td class="kmessage-left resultmsg">
-									<div class="kmsgbody">
+					
+									<div class="module_round_box1_outer">	<div class="module_round_box">
 										<div class="kmsgtitle kresult-title">
 											<span class="kmsgtitle">
 												<?php echo CKunenaLink::GetThreadPageLink ( 'view', intval($result->catid), intval($result->id), NULL, NULL, $result->htmlsubject, intval($result->id) )?>
@@ -41,22 +29,15 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 										</div>
 										<div class="kmsgtext1 resultmsg">
 											<?php echo $result->htmlmessage ?>
-
-
-
-
-
 										</div>
-										
+										</div>
 									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+			
+				
 				<?php endforeach; ?>
-			</td>
-		</tr>
-		<tr class="ksth">
+		</div>
+	
+	<div >
 			<th colspan="3">
 			<?php
 			$resStart = $this->limitstart + 1;
@@ -72,8 +53,6 @@ if (empty ( $this->q ) && empty ( $this->quser )) {
 			<?php echo $this->pagination; ?>
 			<?php endif; ?>
 			</th>
-		</tr>
-	</tbody>
-</table>
+
 
 </div>
