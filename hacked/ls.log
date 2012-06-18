@@ -1,0 +1,37 @@
+-bash-3.2$ ls -ltr
+total 316
+-rw-r--r--  1 czfssh czfssh  1715 Mar  6 16:06 web.config.txt
+-rw-r--r--  1 czfssh czfssh  4244 Mar 14 17:23 README.txt
+-rw-r--r--  1 czfssh czfssh 17816 Mar 14 17:23 LICENSE.txt
+-rw-r--r--  1 czfssh czfssh   475 Mar 14 17:23 favicon.ico
+drwxr-xr-x  2 czfssh czfssh  4096 Mar 14 17:23 cli
+drwxr-xr-x 10 czfssh czfssh  4096 Mar 14 17:23 administrator
+drwxr-xr-x  7 czfssh czfssh  4096 Mar 14 17:23 libraries
+drwxr-xr-x  5 czfssh czfssh  4096 Mar 14 17:23 language
+drwxr-xr-x  2 czfssh czfssh  4096 Mar 14 17:23 includes
+-rw-r--r--  1 czfssh czfssh   865 Mar 14 17:23 robots.txt
+drwxr-xr-x  2 czfssh czfssh  4096 Mar 16 11:58 info
+-rw-r--r--  1 czfssh czfssh    73 Mar 16 11:58 description
+lrwxrwxrwx  1 czfssh czfssh    24 Mar 20 17:03 ayonetau -> ../../64.85.166.157/docs
+drwxr-xr-x  7 czfssh czfssh  4096 Apr  6 19:22 templates
+-r--r--r--  1 czfssh czfssh  2045 Apr 12 18:23 configuration.php
+drwxr-xr-x  6 czfssh czfssh  4096 Apr 17 20:04 images
+drwxr-xr-x 17 czfssh czfssh  4096 Apr 26 17:23 media
+drwxr-xr-x 14 czfssh czfssh  4096 Apr 27 12:56 plugins
+drwxr-xr-x 18 czfssh czfssh  4096 Apr 28 12:15 components
+drwxr-xr-x 42 czfssh czfssh  4096 Apr 28 17:09 modules
+drwxr-xr-x  6 czfssh czfssh  4096 Apr 28 19:01 cache
+drwxr-xr-x  2 czfssh czfssh  4096 May  3 13:37 t
+-rw-rw-r--  1 czfssh czfssh    41 Jun 13 17:21 wp_info.php
+-rw-r--r--  1 czfssh czfssh 23289 Jun 14 19:14 w62127236n.php
+-rw-r--r--  1 czfssh czfssh 23289 Jun 14 19:14 w31742150n.php
+-rw-r--r--  1 czfssh czfssh 23289 Jun 14 19:34 w49981657n.php
+-rw-r--r--  1 czfssh czfssh 23289 Jun 14 19:34 w29632092n.php
+-rw-r--r--  1 czfssh czfssh 23289 Jun 14 19:34 w16764611n.php
+-rw-r--r--  1 czfssh czfssh  3954 Jun 17 06:12 index.php
+-rw-r--r--  1 czfssh czfssh 23289 Jun 17 06:35 mt75107948n.php
+-rw-r--r--  1 czfssh czfssh 24889 Jun 17 07:01 em2.php
+-rw-r--r--  1 czfssh czfssh 23289 Jun 18 00:04 versionindex.php
+drwxr-xr-x  3 czfssh czfssh  4096 Jun 18 02:44 tmp
+drwxrwxr-x  2 czfssh czfssh  4096 Jun 18 10:33 hacked
+
