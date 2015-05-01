@@ -41,10 +41,24 @@ if ($this->msg->modified_time) {
 </div>
 <div class="kmessage-buttons-cover">
 	<div class="kmessage-buttons-row">
-	<?php if (empty( $this->message_closed )) : ?>
-		<?php echo $this->message_reply; ?>
+	
+
+
+
+<?php if($this->my->id != 0) : ?>
+	
+
+
+					
+<?php echo $this->message_reply; ?>
 		<?php echo $this->message_quote; ?>
-		<?php echo $this->message_edit; ?>
+	
+
+
+
+
+	
+<?php echo $this->message_edit; ?>
 		<?php echo $this->message_moderate; ?>
 		<?php echo $this->message_move; ?>
 		<?php echo $this->message_merge; ?>
@@ -54,7 +68,14 @@ if ($this->msg->modified_time) {
 		<?php echo $this->message_undelete; ?>
 		<?php echo $this->message_publish; ?>
 	<?php else : ?>
-		<?php echo $this->message_closed; ?>
+	
+
+
+
+	<?php echo $this->message_closed; ?>
 	<?php endif ?>
-	</div>
+	
+
+
+</div>
 </div>

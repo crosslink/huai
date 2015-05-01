@@ -39,7 +39,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 #Kunena div,
 #Kunena p,
 #Kunena span {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 }
 #Kunena ul li {
 	background: none;
@@ -55,7 +55,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 
 #Kunena .knewchar {
 	color: #009900;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 }
 
 /* Block styling
@@ -111,7 +111,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 #Kunena tr.ksth {
 	background-color: #737373;
 	color: #fff;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 }
 #Kunena td.kcol-ktopicreplies {
 	color: #999999;
@@ -208,7 +208,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 }
 
 #Kunena #ktab a span {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 	color: #FFFFFF;
 }
 #Kunena #ktab a:hover span,
@@ -266,7 +266,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 #Kunena .klist-pages {
 	border-left-color: #BFC3C6;
 	color: #666666;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 }
 
 #Kunena .klist-times {
@@ -284,7 +284,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 #Kunena .klist-pages-all {
 	border-left-color: #BFC3C6;
 	color: #666666;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 }
 
 #Kunena .klist-times-all {
@@ -433,12 +433,12 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 }
 
 #Kunena .ktitle a {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 	color: #FFFFFF;
 }
 
 #Kunena div.kthead-title a {
-	font-family: Lucida Grande, Lucida, Arial, Helvetica, sans-serif;
+	font-family: Lucida Grande, Lucida, Arial, Microsoft Yahei, sans-serif;
 }
 #Kunena div.kthead-moderators  {
 	color: #666;
@@ -497,7 +497,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 }
 
 #Kunena span.kmsgdate {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 	color: #FFFFFF;
 }
 
@@ -560,7 +560,7 @@ Pink forum dark:			#ffd0ff 		RGB: 255/208/255
 #Kunena div.kmsgtext-hide,
 #Kunena div.kmsgtext-confidential {
 	border-color: #BFC3C6;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Microsoft Yahei, sans-serif;
 	background-color: #F2F1EE;
 }
 
@@ -941,7 +941,7 @@ ul.autocompleter-choices {
 	border-right-color:		#c3c3c3;
 	border-bottom-color:	#ddd;
 	background-color:		#fff;
-	font-family:			Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family:			Verdana, Geneva, Arial, Microsoft Yahei, sans-serif;
 	background-color:		#fff;
 }
 ul.autocompleter-choices li.kautocompleter-selected {

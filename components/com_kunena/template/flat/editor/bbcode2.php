@@ -71,7 +71,7 @@ $kunena_config = KunenaFactory::getConfig ();
 			<div id="kbbcode-image-options" style="display: none;">
 				<?php echo JText::_('COM_KUNENA_EDITOR_IMAGELINK_SIZE'); ?>&nbsp;
 				<input id="kbbcode-image_size" name="size" type="text" size="10" maxlength="10"
- value="400"					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKSIZE'); ?>')" />
+ value="600"					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKSIZE'); ?>')" />
 				<?php echo JText::_('COM_KUNENA_EDITOR_IMAGELINK_URL'); ?>&nbsp;
 				<input name="url2" id="kbbcode-image_url" type="text" size="40" value=""
 					onmouseover="javascript:document.id('helpbox').set('value', '<?php echo KunenaParser::JSText('COM_KUNENA_EDITOR_HELPLINE_IMAGELINKURL'); ?>')" />&nbsp;

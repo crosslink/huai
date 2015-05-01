@@ -29,25 +29,60 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 	$this->displayPoll();
 	CKunenaTools::showModulePosition( 'kunena_poll' );
 	$this->displayThreadActions(0);
-?>
+?>       
+
+
+
 
 <div class="kblock">
 
 
-        <div class="kmsg-header kmsg-header-left">
-		<h2><span>&nbsp;&nbsp;<?php echo JText::_('COM_KUNENA_TOPIC') ?> <?php echo $this->escape($this->kunena_topic_title) ?></span></h2>
-		<?php if ($this->favorited) : ?><div class="kfavorite"></div><?php endif ?>
-	</div>
+ 
+<div class="kmsg-header kmsg-header-left">
+		
+<h2><span>&nbsp;&nbsp;<?php echo $this->escape($this->kunena_topic_title) ?></span></h2>
 
-
-	<div class="kcontainer">
-		<div class="kbody">
-			<?php foreach ( $this->messages as $message ) $this->displayMessage($message) ?>
-		</div>
-	</div>
+<?php if ($this->favorited) : ?><div class="kfavorite"></div><?php endif ?>
+	
 </div>
 
+
+
+
+
+
+
+
+
+	
+<div class="kbody">
+			
+<?php foreach ( $this->messages as $message ) $this->displayMessage($message) ?>
+
+<script type="text/javascript" id="wumiiRelatedItems"></script>
+</div>
+	
+
+
+
+
+</div>
+
+
+
+
+
 <?php $this->displayThreadActions(1); ?>
+
+
+
+
+
+
+
+
+
+
 
 <?php if ((CKunenaTools::isModerator ( $this->my->id, $this->catid ) || !$this->topicLocked)&&$this->my->id) :?>
 
@@ -62,10 +97,17 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 		<?php if ($this->allow_anonymous): ?>
 		<input type="text" name="authorname" size="35" class="kinputbox postinput" maxlength="35" value="<?php echo $this->escape($this->myname) ?>" /><br />
 		<input type="checkbox" id="kanonymous<?php echo intval($this->id) ?>" name="anonymous" value="1" class="kinputbox postinput" <?php if ($this->anonymous) echo 'checked="checked"'; ?> /> <label for="kanonymous<?php echo intval($this->id) ?>"><?php echo JText::_('COM_KUNENA_POST_AS_ANONYMOUS_DESC') ?></label><br />
+
+
 		<?php else: ?>
 		<input type="hidden" name="authorname" value="<?php echo $this->escape($this->myname) ?>" />
 		<?php endif; ?>
-		<?php
+	
+
+
+
+
+<?php
 		include_once ( KUNENA_ABSTMPLTPATH . '/editor/kunena.bbcode2.js.php' );
 		CKunenaTools::loadTemplate('/editor/bbcode2.php');
 		?>
@@ -93,6 +135,12 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 <?php endif ?>
 
 
+
+
+
+
+
+
 <!-- B: List Actions Bottom -->
 <div class="kcontainer klist-bottom">
 	<div class="kbody">
@@ -113,4 +161,24 @@ var kunena_anonymous_name = "'.JText::_('COM_KUNENA_USERNAME_ANONYMOUS').'";
 		<?php endif; ?>
 	</div>
 </div>
+
+
+
+<div id="wumiiLikeRecBtnDiv"></div>
+
+<script type="text/javascript">
+    var wumiiPermaLink = ""; //请用代码生成文章永久的链接
+    var wumiiTitle = ""; //请用代码生成文章标题
+    var wumiiTags = ""; //请用代码生成文章标签，以英文逗号分隔，如："标签1,标签2"
+    var wumiiSitePrefix = "http://ayo.net.au/";
+    var wumiiParams = "&num=6&mode=3&pf=JAVASCRIPT";
+</script>
+<script type="text/javascript" src="http://widget.wumii.com/ext/relatedItemsWidget"></script>
+
+
+
+
+
+
+
 <!-- F: List Actions Bottom -->

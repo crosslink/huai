@@ -67,6 +67,9 @@ kbbcode.addFunction('Italic', function() {
 
 
 
+
+
+
 kbbcode.addFunction('Size', function() {
 	kToggleOrSwap("kbbcode-size-options");
 }, {'id': 'kbbcode-size-button',
@@ -76,6 +79,20 @@ kbbcode.addFunction('Size', function() {
 
 
 
+
+
+
+
+
+
+
+
+kbbcode.addFunction('Center', function() {
+	this.wrapSelection('[center]', '[/center]', false);
+}, {'id': 'kbbcode-center-button',
+	'title': '<?php echo JText::_('COM_KUNENA_EDITOR_CENTER');?>',
+	'alt': '<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_CENTER');?>',
+	'onmouseover' : '$("helpbox").set("value", "<?php echo JText::_('COM_KUNENA_EDITOR_HELPLINE_CENTER');?>")'});
 
 
 

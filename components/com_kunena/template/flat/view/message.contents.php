@@ -19,4 +19,9 @@ defined ( '_JEXEC' ) or die ();
 		<?php echo $this->messageHtml ?>
 	</div>
 </div>
-<?php $this->displayAttachments() ?>
+
+
+
+
+
+	<?php $this->displayAttachments() ?> 

@@ -24,16 +24,16 @@
 #Kunena div,
 #Kunena p,
 #Kunena span {
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 #Kunena .knewchar {
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 
 /* Block styling */
 
 #Kunena tr.ksth {
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 #Kunena td.kcol-mid {
 	/* TODO: override left rule? */
@@ -47,12 +47,12 @@
 /* Menu */
 
 #Kunena #ktab a span {
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 #Kunena .klist-pages {
 	/* TODO: override left rule? */
 	border-right-color: #BFC3C6;
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 #Kunena .klist-times {
 	/* TODO: override left rule? */
@@ -65,7 +65,7 @@
 #Kunena .klist-pages-all {
 	/* TODO: override left rule? */
 	border-right-color: #BFC3C6;
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 #Kunena .klist-times-all {
 	/* TODO: override left rule? */
@@ -94,16 +94,16 @@
 /* Category List */
 
 #Kunena .ktitle a {
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 #Kunena div.kthead-title a {
-	font-family: Tahoma, Lucida, Arial, Helvetica, sans-serif;
+	font-family: Tahoma, Lucida, Arial, Microsoft Yahei,, sans-serif;
 }
 
 /* View page */
 
 #Kunena span.kmsgdate {
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 #Kunena div.kmsgtext pre,
 #Kunena div.kmsgtext code {
@@ -118,7 +118,7 @@
 #Kunena div.kmsgtext-quote,
 #Kunena div.kmsgtext-hide,
 #Kunena div.kmsgtext-confidential {
-	font-family: Tahoma, Helvetica, sans-serif;
+	font-family: Tahoma, Microsoft Yahei,, sans-serif;
 }
 
 /* Avatar position: right */
@@ -138,5 +138,5 @@
 /* Mootools Autocompleter CSS classes */
 
 ul.autocompleter-choices {
-	font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-family: Tahoma, Geneva, Arial, Microsoft Yahei,, sans-serif;
 }
