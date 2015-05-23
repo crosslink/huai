@@ -3,24 +3,20 @@
  * @package     Joomla.Site
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
 defined('_JEXEC') or die;
-
-jimport('joomla.application.component.controller');
 
 JLoader::register('FinderHelperLanguage', JPATH_ADMINISTRATOR . '/components/com_finder/helpers/language.php');
 
 /**
  * Finder Component Controller.
  *
- * @package     Joomla.Site
- * @subpackage  com_finder
- * @since       2.5
+ * @since  2.5
  */
-class FinderController extends JController
+class FinderController extends JControllerLegacy
 {
 	/**
 	 * Method to display a view.
@@ -29,19 +25,14 @@ class FinderController extends JController
 	 * @param   array    $urlparams  An array of safe url parameters and their variable types,
 	 *                               for valid values see {@link JFilterInput::clean()}. [optional]
 	 *
-	 * @return  JController  This object is to support chaining.
+	 * @return  JControllerLegacy  This object is to support chaining.
 	 *
-	 * @since   1.6
+	 * @since   2.5
 	 */
 	public function display($cachable = false, $urlparams = array())
 	{
-		// Initialise variables.
 		$input = JFactory::getApplication()->input;
 		$cachable = true;
-		$user = JFactory::getUser();
-
-		// Load plug-in language files.
-		FinderHelperLanguage::loadPluginLanguage();
 
 		// Load plug-in language files.
 		FinderHelperLanguage::loadPluginLanguage();
@@ -51,9 +42,10 @@ class FinderController extends JController
 		$input->set('view', $viewName);
 
 		// Don't cache view for search queries
-		if ($input->get('q') || $input->get('f') || $input->get('t')) {
- 			$cachable = false;
- 		}
+		if ($input->get('q', null, 'string') || $input->get('f', null, 'int') || $input->get('t', null, 'array'))
+		{
+			$cachable = false;
+		}
 
 		$safeurlparams = array(
 			'f' 	=> 'INT',

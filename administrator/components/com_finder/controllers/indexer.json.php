@@ -3,7 +3,7 @@
  * @package     Joomla.Administrator
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
@@ -15,11 +15,9 @@ JLoader::register('FinderIndexer', JPATH_COMPONENT_ADMINISTRATOR . '/helpers/ind
 /**
  * Indexer controller class for Finder.
  *
- * @package     Joomla.Administrator
- * @subpackage  com_finder
- * @since       2.5
+ * @since  2.5
  */
-class FinderControllerIndexer extends JController
+class FinderControllerIndexer extends JControllerLegacy
 {
 	/**
 	 * Method to start the indexer.
@@ -32,11 +30,16 @@ class FinderControllerIndexer extends JController
 	{
 		static $log;
 
-		if ($log == null)
+		$params = JComponentHelper::getParams('com_finder');
+
+		if ($params->get('enable_logging', '0'))
 		{
-			$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
-			$options['text_file'] = 'indexer.php';
-			$log = JLog::addLogger($options);
+			if ($log == null)
+			{
+				$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
+				$options['text_file'] = 'indexer.php';
+				$log = JLog::addLogger($options);
+			}
 		}
 
 		// Log the start
@@ -48,7 +51,7 @@ class FinderControllerIndexer extends JController
 		header('Expires: -1');
 
 		// Check for a valid token. If invalid, send a 403 with the error message.
-		JRequest::checkToken('request') or $this->sendResponse(new Exception(JText::_('JINVALID_TOKEN'), 403));
+		JSession::checkToken('request') or $this->sendResponse(new Exception(JText::_('JINVALID_TOKEN'), 403));
 
 		// Put in a buffer to silence noise.
 		ob_start();
@@ -67,7 +70,7 @@ class FinderControllerIndexer extends JController
 		try
 		{
 			// Trigger the onStartIndex event.
-			JDispatcher::getInstance()->trigger('onStartIndex');
+			JEventDispatcher::getInstance()->trigger('onStartIndex');
 
 			// Get the indexer state.
 			$state = FinderIndexer::getState();
@@ -94,11 +97,16 @@ class FinderControllerIndexer extends JController
 	{
 		static $log;
 
-		if ($log == null)
+		$params = JComponentHelper::getParams('com_finder');
+
+		if ($params->get('enable_logging', '0'))
 		{
-			$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
-			$options['text_file'] = 'indexer.php';
-			$log = JLog::addLogger($options);
+			if ($log == null)
+			{
+				$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
+				$options['text_file'] = 'indexer.php';
+				$log = JLog::addLogger($options);
+			}
 		}
 
 		// Log the start
@@ -110,7 +118,7 @@ class FinderControllerIndexer extends JController
 		header('Expires: -1');
 
 		// Check for a valid token. If invalid, send a 403 with the error message.
-		JRequest::checkToken('request') or $this->sendResponse(new Exception(JText::_('JINVALID_TOKEN'), 403));
+		JSession::checkToken('request') or $this->sendResponse(new Exception(JText::_('JINVALID_TOKEN'), 403));
 
 		// Put in a buffer to silence noise.
 		ob_start();
@@ -135,7 +143,7 @@ class FinderControllerIndexer extends JController
 		 * in order to work around some plugins that don't do proper environment
 		 * checks before trying to use HTML document functions.
 		 */
-		$raw = clone(JFactory::getDocument());
+		$raw = clone JFactory::getDocument();
 		$lang = JFactory::getLanguage();
 
 		// Get the document properties.
@@ -155,10 +163,9 @@ class FinderControllerIndexer extends JController
 		$doc = $html;
 
 		// Get the admin application.
-		$admin = clone(JFactory::getApplication());
+		$admin = clone JFactory::getApplication();
 
 		// Get the site app.
-		include_once JPATH_SITE . '/includes/application.php';
 		$site = JApplication::getInstance('site');
 
 		// Swap the app.
@@ -169,10 +176,10 @@ class FinderControllerIndexer extends JController
 		try
 		{
 			// Trigger the onBeforeIndex event.
-			JDispatcher::getInstance()->trigger('onBeforeIndex');
+			JEventDispatcher::getInstance()->trigger('onBeforeIndex');
 
 			// Trigger the onBuildIndex event.
-			JDispatcher::getInstance()->trigger('onBuildIndex');
+			JEventDispatcher::getInstance()->trigger('onBuildIndex');
 
 			// Get the indexer state.
 			$state = FinderIndexer::getState();
@@ -214,7 +221,7 @@ class FinderControllerIndexer extends JController
 		header('Expires: -1');
 
 		// Check for a valid token. If invalid, send a 403 with the error message.
-		JRequest::checkToken('request') or $this->sendResponse(new Exception(JText::_('JINVALID_TOKEN'), 403));
+		JSession::checkToken('request') or $this->sendResponse(new Exception(JText::_('JINVALID_TOKEN'), 403));
 
 		// Put in a buffer to silence noise.
 		ob_start();
@@ -224,8 +231,8 @@ class FinderControllerIndexer extends JController
 
 		try
 		{
-			// Optimize the index.
-			FinderIndexer::optimize();
+			// Optimize the index
+			FinderIndexer::getInstance()->optimize();
 
 			// Get the indexer state.
 			$state = FinderIndexer::getState();
@@ -257,21 +264,25 @@ class FinderControllerIndexer extends JController
 	{
 		static $log;
 
-		if ($log == null)
-		{
-			$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
-			$options['text_file'] = 'indexer.php';
-			$log = JLog::addLogger($options);
-		}
+		$params = JComponentHelper::getParams('com_finder');
 
-		$backtrace = null;
+		if ($params->get('enable_logging', '0'))
+		{
+			if ($log == null)
+			{
+				$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
+				$options['text_file'] = 'indexer.php';
+				$log = JLog::addLogger($options);
+			}
+		}
 
 		// Send the assigned error code if we are catching an exception.
 		if ($data instanceof Exception)
 		{
+			$app = JFactory::getApplication();
 			JLog::add($data->getMessage(), JLog::ERROR);
-			JResponse::setHeader('status', $data->getCode());
-			JResponse::sendHeaders();
+			$app->setHeader('status', $data->getCode());
+			$app->sendHeaders();
 		}
 
 		// Create the response object.
@@ -291,9 +302,7 @@ class FinderControllerIndexer extends JController
 /**
  * Finder Indexer JSON Response Class
  *
- * @package     Joomla.Administrator
- * @subpackage  com_finder
- * @since       2.5
+ * @since  2.5
  */
 class FinderIndexerResponse
 {
@@ -308,11 +317,16 @@ class FinderIndexerResponse
 	{
 		static $log;
 
-		if ($log == null)
+		$params = JComponentHelper::getParams('com_finder');
+
+		if ($params->get('enable_logging', '0'))
 		{
-			$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
-			$options['text_file'] = 'indexer.php';
-			$log = JLog::addLogger($options);
+			if ($log == null)
+			{
+				$options['format'] = '{DATE}\t{TIME}\t{LEVEL}\t{CODE}\t{MESSAGE}';
+				$options['text_file'] = 'indexer.php';
+				$log = JLog::addLogger($options);
+			}
 		}
 
 		// The old token is invalid so send a new one.

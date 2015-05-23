@@ -3,26 +3,25 @@
  * @package     Joomla.Site
  * @subpackage  com_finder
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE
  */
 
 defined('_JEXEC') or die;
 
-jimport('joomla.application.component.view');
-
 /**
  * Search HTML view class for the Finder package.
  *
- * @package     Joomla.Site
- * @subpackage  com_finder
- * @since       2.5
+ * @since  2.5
  */
-class FinderViewSearch extends JView
+class FinderViewSearch extends JViewLegacy
 {
 	protected $query;
+
 	protected $params;
+
 	protected $state;
+
 	protected $user;
 
 	/**
@@ -64,18 +63,18 @@ class FinderViewSearch extends JView
 		}
 
 		// Push out the view data.
-		$this->assignRef('state', $state);
-		$this->assignRef('params', $params);
-		$this->assignRef('query', $query);
-		$this->assignRef('results', $results);
-		$this->assignRef('total', $total);
-		$this->assignRef('pagination', $pagination);
+		$this->state = &$state;
+		$this->params = &$params;
+		$this->query = &$query;
+		$this->results = &$results;
+		$this->total = &$total;
+		$this->pagination = &$pagination;
 
 		// Check for a double quote in the query string.
 		if (strpos($this->query->input, '"'))
 		{
 			// Get the application router.
-			$router =& $app->getRouter();
+			$router =& $app::getRouter();
 
 			// Fix the q variable in the URL.
 			if ($router->getVar('q') !== $this->query->input)
@@ -84,10 +83,13 @@ class FinderViewSearch extends JView
 			}
 		}
 
+		// Log the search
+		JSearchHelper::logSearch($this->query->input, 'com_finder');
+
 		// Push out the query data.
 		JHtml::addIncludePath(JPATH_COMPONENT . '/helpers/html');
-		$this->assign('suggested', JHtml::_('query.suggested', $query));
-		$this->assign('explained', JHtml::_('query.explained', $query));
+		$this->suggested = JHtml::_('query.suggested', $query);
+		$this->explained = JHtml::_('query.explained', $query);
 
 		// Escape strings for HTML output
 		$this->pageclass_sfx = htmlspecialchars($params->get('pageclass_sfx'));
@@ -123,7 +125,7 @@ class FinderViewSearch extends JView
 		$fields = null;
 
 		// Get the URI.
-		$uri = JURI::getInstance(JRoute::_($this->query->toURI()));
+		$uri = JUri::getInstance(JRoute::_($this->query->toURI()));
 		$uri->delVar('q');
 		$uri->delVar('o');
 		$uri->delVar('t');
@@ -131,9 +133,10 @@ class FinderViewSearch extends JView
 		$uri->delVar('d2');
 		$uri->delVar('w1');
 		$uri->delVar('w2');
+		$elements = $uri->getQuery(true);
 
 		// Create hidden input elements for each part of the URI.
-		foreach ($uri->getQuery(true) as $n => $v)
+		foreach ($elements as $n => $v)
 		{
 			if (is_scalar($v))
 			{
@@ -179,7 +182,6 @@ class FinderViewSearch extends JView
 	{
 		$app = JFactory::getApplication();
 		$menus = $app->getMenu();
-		$pathway = $app->getPathway();
 		$title = null;
 
 		// Because the application sets a default page title,
@@ -195,21 +197,19 @@ class FinderViewSearch extends JView
 			$this->params->def('page_heading', JText::_('COM_FINDER_DEFAULT_PAGE_TITLE'));
 		}
 
-		$id = (int) @$menu->query['id'];
-
 		$title = $this->params->get('page_title', '');
 
 		if (empty($title))
 		{
-			$title = $app->getCfg('sitename');
+			$title = $app->get('sitename');
 		}
-		elseif ($app->getCfg('sitename_pagetitles', 0) == 1)
+		elseif ($app->get('sitename_pagetitles', 0) == 1)
 		{
-			$title = JText::sprintf('JPAGETITLE', $app->getCfg('sitename'), $title);
+			$title = JText::sprintf('JPAGETITLE', $app->get('sitename'), $title);
 		}
-		elseif ($app->getCfg('sitename_pagetitles', 0) == 2)
+		elseif ($app->get('sitename_pagetitles', 0) == 2)
 		{
-			$title = JText::sprintf('JPAGETITLE', $title, $app->getCfg('sitename'));
+			$title = JText::sprintf('JPAGETITLE', $title, $app->get('sitename'));
 		}
 
 		$this->document->setTitle($title);
